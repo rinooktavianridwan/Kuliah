@@ -6,7 +6,7 @@ package StudyKasus1;
 
 import java.util.LinkedHashSet;
 
-public class Karyawan {
+public class Karyawan implements Infokan {
 
     public String nama;
     public String id;
@@ -29,6 +29,10 @@ public class Karyawan {
         this.umur = umur;
         this.posisi = posisi;
         this.gaji = gaji;
+    }
+
+    @Override
+    public void cetakInfo() {
     }
 
     public void print() {

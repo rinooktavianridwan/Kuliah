@@ -2,24 +2,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 package StudyKasus1;
 
-public class Hewan {
+public class Hewan implements Infokan {
+
     public String noPelanggan;
     public String namaPelanggan;
     public String namaHewan;
     public String jenisHewan;
     public String warnaHewan;
-    public String [] kebutuhan;
+    public String[] kebutuhan;
     public String riwayatPenyakit;
     public int tahunKelahiran;
     public int umurHewan;
     public int totalHarga;
 
-    public Hewan() {}
+    public Hewan() {
+    }
 
-    public Hewan(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, String [] kebutuhan, String riwayatPenyakit, int tahunKelahiran, int umurHewan, int totalHarga) {
+    public Hewan(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, String[] kebutuhan, String riwayatPenyakit, int tahunKelahiran, int umurHewan, int totalHarga) {
         this.noPelanggan = noPelanggan;
         this.namaPelanggan = namaPelanggan;
         this.namaHewan = namaHewan;
@@ -32,6 +33,10 @@ public class Hewan {
         this.totalHarga = totalHarga;
     }
 
+    @Override
+    public void cetakInfo() {
+    }
+
     public void print() {
         System.out.println("\nID Pelanggan\t\t\t: " + noPelanggan);
         System.out.println("Nama Pelanggan\t\t\t: " + namaPelanggan);
@@ -39,10 +44,10 @@ public class Hewan {
         System.out.println("Jenis Hewan\t\t\t\t: " + jenisHewan);
         System.out.println("Warna Hewan\t\t\t\t: " + warnaHewan);
         System.out.println("Kebutuhan \t\t\t\t: ");
-        int j =1;
-        for(int i = 0; i<kebutuhan.length;i++){
-            if(kebutuhan[i]!=null){
-                System.out.println(j + ". " +kebutuhan[i]);
+        int j = 1;
+        for (int i = 0; i < kebutuhan.length; i++) {
+            if (kebutuhan[i] != null) {
+                System.out.println(j + ". " + kebutuhan[i]);
                 j++;
             }
         }
@@ -50,15 +55,19 @@ public class Hewan {
         System.out.println("Tahun kelahiran hewan\t: " + tahunKelahiran);
         System.out.println("Umur hewan\t\t\t\t: " + umurHewan);
         System.out.println("Total harga\t\t\t\t: " + totalHarga);
-        
+
     }
+
 }
 
 class Kucing extends Hewan {
+
     String kebiasaanMencakar;
 
-    public Kucing() {}
-    public Kucing(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, String [] kebutuhan, String riwayatPenyakit, int tahunKelahiran, int umurHewan, int totalHarga, String kebiasaanMencakar) {
+    public Kucing() {
+    }
+
+    public Kucing(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, String[] kebutuhan, String riwayatPenyakit, int tahunKelahiran, int umurHewan, int totalHarga, String kebiasaanMencakar) {
         super(noPelanggan, namaPelanggan, namaHewan, jenisHewan, warnaHewan, kebutuhan, riwayatPenyakit, tahunKelahiran, umurHewan, totalHarga);
         this.kebiasaanMencakar = kebiasaanMencakar;
     }
@@ -70,10 +79,13 @@ class Kucing extends Hewan {
 }
 
 class Anjing extends Hewan {
+
     String kebisaanMenggigit;
 
-    public Anjing() {}
-    public Anjing(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, String [] kebutuhan, String riwayatPenyakit, int tahunKelahiran, int umurHewan,int totalHarga, String kebisaanMenggigit) {
+    public Anjing() {
+    }
+
+    public Anjing(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, String[] kebutuhan, String riwayatPenyakit, int tahunKelahiran, int umurHewan, int totalHarga, String kebisaanMenggigit) {
         super(noPelanggan, namaPelanggan, namaHewan, jenisHewan, warnaHewan, kebutuhan, riwayatPenyakit, tahunKelahiran, umurHewan, totalHarga);
         this.kebisaanMenggigit = kebisaanMenggigit;
     }
@@ -85,10 +97,13 @@ class Anjing extends Hewan {
 }
 
 class Kelinci extends Hewan {
+
     String kebiasaanMelompat;
 
-    public Kelinci() {}
-    public Kelinci(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, String [] kebutuhan, String riwayatPenyakit, int tahunKelahiran, int umurHewan, int totalHarga, String kebiasaanMelompat) {
+    public Kelinci() {
+    }
+
+    public Kelinci(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, String[] kebutuhan, String riwayatPenyakit, int tahunKelahiran, int umurHewan, int totalHarga, String kebiasaanMelompat) {
         super(noPelanggan, namaPelanggan, namaHewan, jenisHewan, warnaHewan, kebutuhan, riwayatPenyakit, tahunKelahiran, totalHarga, umurHewan);
         this.kebiasaanMelompat = kebiasaanMelompat;
     }
