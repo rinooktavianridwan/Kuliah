@@ -47,7 +47,7 @@ public class Hewan {
             }
         }
         System.out.println("Riwayat penyakit\t\t: " + riwayatPenyakit);
-        System.out.println("Tahun kelalahiran hewan\t: " + tahunKelahiran);
+        System.out.println("Tahun kelahiran hewan\t: " + tahunKelahiran);
         System.out.println("Umur hewan\t\t\t\t: " + umurHewan);
         System.out.println("Total harga\t\t\t\t: " + totalHarga);
         

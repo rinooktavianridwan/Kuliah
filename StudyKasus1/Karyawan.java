@@ -72,29 +72,35 @@ class Admin extends Karyawan {
 
         if (hewan instanceof Kucing) {
             for (int i = 0; i < hewan.kebutuhan.length; i++) {
-                if (hewan.kebutuhan[i].equalsIgnoreCase("grooming")) {
-                    list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + hewan.kebutuhan + " oleh groomer");
-                } else if (hewan.kebutuhan[i].equalsIgnoreCase("periksa")) {
-                    list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + hewan.kebutuhan + " oleh dokter hewan");
+                if (((Kucing) hewan).kebutuhan[i] != null) {
+                    if (hewan.kebutuhan[i].equalsIgnoreCase("grooming")) {
+                        list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + hewan.kebutuhan + " oleh groomer");
+                    } else if (hewan.kebutuhan[i].equalsIgnoreCase("periksa")) {
+                        list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + hewan.kebutuhan + " oleh dokter hewan");
+                    }
                 }
 
             }
 
         } else if (hewan instanceof Anjing) {
             for (int i = 0; i < hewan.kebutuhan.length; i++) {
-                if (hewan.kebutuhan[i].equalsIgnoreCase("grooming")) {
-                    list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + hewan.kebutuhan + " oleh groomer");
-                } else if (hewan.kebutuhan[i].equalsIgnoreCase("periksa")) {
-                    list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + hewan.kebutuhan + " oleh dokter hewan");
+                if (((Kucing) hewan).kebutuhan[i] != null) {
+                    if (hewan.kebutuhan[i].equalsIgnoreCase("grooming")) {
+                        list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + hewan.kebutuhan + " oleh groomer");
+                    } else if (hewan.kebutuhan[i].equalsIgnoreCase("periksa")) {
+                        list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + hewan.kebutuhan + " oleh dokter hewan");
+                    }
                 }
 
             }
         } else if (hewan instanceof Kelinci) {
             for (int i = 0; i < hewan.kebutuhan.length; i++) {
-                if (hewan.kebutuhan[i].equalsIgnoreCase("grooming")) {
-                    list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + hewan.kebutuhan + " oleh groomer");
-                } else if (hewan.kebutuhan[i].equalsIgnoreCase("periksa")) {
-                    list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + hewan.kebutuhan + " oleh dokter hewan");
+                if (((Kucing) hewan).kebutuhan[i] != null) {
+                    if (hewan.kebutuhan[i].equalsIgnoreCase("grooming")) {
+                        list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + hewan.kebutuhan + " oleh groomer");
+                    } else if (hewan.kebutuhan[i].equalsIgnoreCase("periksa")) {
+                        list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + hewan.kebutuhan + " oleh dokter hewan");
+                    }
                 }
 
             }
