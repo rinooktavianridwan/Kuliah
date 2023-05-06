@@ -20,14 +20,14 @@ public class Karyawan implements CetakInfo {
     public Karyawan() {
     }
 
-    public Karyawan(String nama, String id, String alamat, String noTelp, String jenisKelamin, String posisi, int umur, int gaji) {
+    public Karyawan(String nama, String id, String alamat, String noTelp, String jenisKelamin, int umur, int gaji) {
         this.nama = nama;
         this.id = id;
         this.alamat = alamat;
         this.noTelp = noTelp;
         this.jenisKelamin = jenisKelamin;
         this.umur = umur;
-        this.posisi = posisi;
+        this.posisi = "Karyawan Biasa";
         this.gaji = gaji;
     }
 
@@ -63,63 +63,90 @@ class Admin extends Karyawan {
     public Admin() {
     }
 
-    public Admin(String nama, String id, String alamat, String noTelp, String jenisKelamin, String posisi, int umur, int gaji, String divisi) {
-        super(nama, id, alamat, noTelp, jenisKelamin, posisi, umur, gaji);
+    public Admin(String nama, String id, String alamat, String noTelp, String jenisKelamin, int umur, int gaji, String divisi) {
+        super(nama, id, alamat, noTelp, jenisKelamin, umur, gaji);
+        this.posisi = "Admin";
         this.divisi = divisi;
     }
 
     public void riwayatPelayanan(LinkedHashSet<String> list, Hewan hewan) {
 
         if (hewan instanceof Kucing) {
-            System.out.println("");
+            System.out.println("Kucing" + " \"" + hewan.namaHewan + "\" ");
+            System.out.println("Jenis Perawatan : ");
             for (int i = 0; i < hewan.kebutuhan.size(); i++) {
                 if (((Kucing) hewan).kebutuhan.get(i) != null) {
                     switch (hewan.kebutuhan.get(i)) {
-                        case suntikVaksin -> list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + JenisPerawatan.suntikVaksin + " oleh doktor hewan");
-                        case suntikAntiKutu -> list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + JenisPerawatan.suntikAntiKutu + " oleh doktor hewan");
-                        case suntikScabies -> list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + JenisPerawatan.suntikScabies + " oleh doktor hewan");
-                        case suntikAntiJamurKulit -> list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + JenisPerawatan.suntikAntiJamurKulit + " oleh doktor hewan");
-                        case pemeriksaanRawatInap -> list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + JenisPerawatan.pemeriksaanRawatInap + " oleh doktor hewan");
-                        case pemeriksaanRawatJalan -> list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + JenisPerawatan.pemeriksaanRawatJalan + " oleh doktor hewan");
+                        case suntikVaksin ->
+                            list.add(JenisPerawatan.suntikVaksin + " oleh doktor hewan");
+                        case suntikAntiKutu ->
+                            list.add(JenisPerawatan.suntikAntiKutu + " oleh doktor hewan");
+                        case suntikScabies ->
+                            list.add(JenisPerawatan.suntikScabies + " oleh doktor hewan");
+                        case suntikAntiJamurKulit ->
+                            list.add(JenisPerawatan.suntikAntiJamurKulit + " oleh doktor hewan");
+                        case pemeriksaanRawatInap ->
+                            list.add(JenisPerawatan.pemeriksaanRawatInap + " oleh doktor hewan");
+                        case pemeriksaanRawatJalan ->
+                            list.add(JenisPerawatan.pemeriksaanRawatJalan + " oleh doktor hewan");
                         default -> {
                         }
                     }
                 }
 
             }
+            System.out.println("");
 
         } else if (hewan instanceof Anjing) {
+            System.out.println("Anjing" + " \"" + hewan.namaHewan + "\" ");
+            System.out.println("Jenis Perawatan : ");
             for (int i = 0; i < hewan.kebutuhan.size(); i++) {
                 if (((Anjing) hewan).kebutuhan.get(i) != null) {
                     switch (hewan.kebutuhan.get(i)) {
-                        case suntikVaksin -> list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + JenisPerawatan.suntikVaksin + " oleh doktor hewan");
-                        case suntikAntiKutu -> list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + JenisPerawatan.suntikAntiKutu + " oleh doktor hewan");
-                        case suntikScabies -> list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + JenisPerawatan.suntikScabies + " oleh doktor hewan");
-                        case suntikAntiJamurKulit -> list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + JenisPerawatan.suntikAntiJamurKulit + " oleh doktor hewan");
-                        case pemeriksaanRawatInap -> list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + JenisPerawatan.pemeriksaanRawatInap + " oleh doktor hewan");
-                        case pemeriksaanRawatJalan -> list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + JenisPerawatan.pemeriksaanRawatJalan + " oleh doktor hewan");
+                        case suntikVaksin ->
+                            list.add(JenisPerawatan.suntikVaksin + " oleh doktor hewan");
+                        case suntikAntiKutu ->
+                            list.add(JenisPerawatan.suntikAntiKutu + " oleh doktor hewan");
+                        case suntikScabies ->
+                            list.add(JenisPerawatan.suntikScabies + " oleh doktor hewan");
+                        case suntikAntiJamurKulit ->
+                            list.add(JenisPerawatan.suntikAntiJamurKulit + " oleh doktor hewan");
+                        case pemeriksaanRawatInap ->
+                            list.add(JenisPerawatan.pemeriksaanRawatInap + " oleh doktor hewan");
+                        case pemeriksaanRawatJalan ->
+                            list.add(JenisPerawatan.pemeriksaanRawatJalan + " oleh doktor hewan");
                         default -> {
                         }
                     }
                 }
 
             }
+            System.out.println("");
         } else if (hewan instanceof Kelinci) {
+            System.out.println("Kucing" + " \"" + hewan.namaHewan + "\" ");
+            System.out.println("Jenis Perawatan : ");
             for (int i = 0; i < hewan.kebutuhan.size(); i++) {
                 if (((Kelinci) hewan).kebutuhan.get(i) != null) {
                     switch (hewan.kebutuhan.get(i)) {
-                        case suntikVaksin -> list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + JenisPerawatan.suntikVaksin + " oleh doktor hewan");
-                        case suntikAntiKutu -> list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + JenisPerawatan.suntikAntiKutu + " oleh doktor hewan");
-                        case suntikScabies -> list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + JenisPerawatan.suntikScabies + " oleh doktor hewan");
-                        case suntikAntiJamurKulit -> list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + JenisPerawatan.suntikAntiJamurKulit + " oleh doktor hewan");
-                        case pemeriksaanRawatInap -> list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + JenisPerawatan.pemeriksaanRawatInap + " oleh doktor hewan");
-                        case pemeriksaanRawatJalan -> list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + JenisPerawatan.pemeriksaanRawatJalan + " oleh doktor hewan");
+                        case suntikVaksin ->
+                            list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + JenisPerawatan.suntikVaksin + " oleh doktor hewan");
+                        case suntikAntiKutu ->
+                            list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + JenisPerawatan.suntikAntiKutu + " oleh doktor hewan");
+                        case suntikScabies ->
+                            list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + JenisPerawatan.suntikScabies + " oleh doktor hewan");
+                        case suntikAntiJamurKulit ->
+                            list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + JenisPerawatan.suntikAntiJamurKulit + " oleh doktor hewan");
+                        case pemeriksaanRawatInap ->
+                            list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + JenisPerawatan.pemeriksaanRawatInap + " oleh doktor hewan");
+                        case pemeriksaanRawatJalan ->
+                            list.add("kucing" + " \"" + hewan.namaHewan + "\" " + "sudah di " + JenisPerawatan.pemeriksaanRawatJalan + " oleh doktor hewan");
                         default -> {
                         }
                     }
                 }
 
             }
+            System.out.println("");
         }
 
     }
@@ -132,8 +159,9 @@ class Groomer extends Karyawan {
     public Groomer() {
     }
 
-    public Groomer(String nama, String id, String alamat, String noTelp, String jenisKelamin, String posisi, int umur, int gaji, String bagian) {
-        super(nama, id, alamat, noTelp, jenisKelamin, posisi, umur, gaji);
+    public Groomer(String nama, String id, String alamat, String noTelp, String jenisKelamin, int umur, int gaji, String bagian) {
+        super(nama, id, alamat, noTelp, jenisKelamin, umur, gaji);
+        this.posisi = "Groomer";
         this.bagian = bagian;
     }
 
@@ -155,8 +183,9 @@ class DokterHewan extends Karyawan {
     public DokterHewan() {
     }
 
-    public DokterHewan(String nama, String id, String alamat, String noTelp, String jenisKelamin, String posisi, int umur, int gaji, String spesialis, String tingkatPendidikan) {
-        super(nama, id, alamat, noTelp, jenisKelamin, posisi, umur, gaji);
+    public DokterHewan(String nama, String id, String alamat, String noTelp, String jenisKelamin, int umur, int gaji, String spesialis, String tingkatPendidikan) {
+        super(nama, id, alamat, noTelp, jenisKelamin, umur, gaji);
+        this.posisi = "Dokter Hewan";
         this.spesialis = spesialis;
         this.tingkatPendidikan = tingkatPendidikan;
     }

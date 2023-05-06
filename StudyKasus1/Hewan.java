@@ -72,7 +72,7 @@ class Kucing extends Hewan {
 
     public void print() {
         super.print();
-        System.out.println("Kebiasaaan melompat\t\t: " + kebiasaanMencakar);
+        System.out.println("Kebiasaaan mencakar\t\t: " + kebiasaanMencakar);
     }
 }
 
@@ -102,7 +102,7 @@ class Kelinci extends Hewan {
     }
 
     public Kelinci(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, ArrayList<JenisPerawatan> kebutuhan, String riwayatPenyakit, int tahunKelahiran, int umurHewan, int totalHarga, String kebiasaanMelompat) {
-        super(noPelanggan, namaPelanggan, namaHewan, jenisHewan, warnaHewan, kebutuhan, riwayatPenyakit, tahunKelahiran, totalHarga, umurHewan);
+        super(noPelanggan, namaPelanggan, namaHewan, jenisHewan, warnaHewan, kebutuhan, riwayatPenyakit, tahunKelahiran, umurHewan, totalHarga);
         this.kebiasaanMelompat = kebiasaanMelompat;
     }
 

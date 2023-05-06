@@ -155,8 +155,6 @@ public class Implementasi {
         String noTelp = input.nextLine();
         System.out.print("Masukkan jenis kelamin: ");
         String jenisKelamin = input.nextLine();
-        System.out.print("Masukkan posisi: ");
-        String posisi = input.nextLine();
         System.out.print("Masukkan umur: ");
         // Handle input mismatch exception
         int umur;
@@ -179,7 +177,7 @@ public class Implementasi {
         }
 
         // Membuat object karyawan dan memasukkan ke list
-        Karyawan karyawan = new Karyawan(nama, id, alamat, noTelp, jenisKelamin, posisi, umur, gaji);
+        Karyawan karyawan = new Karyawan(nama, id, alamat, noTelp, jenisKelamin, umur, gaji);
         list.add(karyawan);
 
         // Agar buffer bisa turun untuk segera mendapat input nextline
@@ -200,8 +198,6 @@ public class Implementasi {
         String noTelp = input.nextLine();
         System.out.print("Masukkan jenis kelamin: ");
         String jenisKelamin = input.nextLine();
-        System.out.print("Masukkan posisi: ");
-        String posisi = input.nextLine();
         System.out.print("Masukkan divisi: ");
         String divisi = input.nextLine();
         System.out.print("Masukkan umur: ");
@@ -225,7 +221,7 @@ public class Implementasi {
             return;
         }
 
-        Admin admin = new Admin(nama, id, alamat, noTelp, jenisKelamin, posisi, umur, gaji, divisi);
+        Admin admin = new Admin(nama, id, alamat, noTelp, jenisKelamin, umur, gaji, divisi);
         list.add(admin);
 
         if (input.hasNextLine()) {
@@ -271,7 +267,7 @@ public class Implementasi {
             return;
         }
 
-        Groomer groomer = new Groomer(nama, id, alamat, noTelp, jenisKelamin, posisi, umur, gaji, bagian);
+        Groomer groomer = new Groomer(nama, id, alamat, noTelp, jenisKelamin, umur, gaji, bagian);
         list.add(groomer);
 
         if (input.hasNextLine()) {
@@ -292,8 +288,6 @@ public class Implementasi {
         String noTelp = input.nextLine();
         System.out.print("Masukkan jenis kelamin: ");
         String jenisKelamin = input.nextLine();
-        System.out.print("Masukkan posisi: ");
-        String posisi = input.nextLine();
         System.out.print("Masukkan spesialis: ");
         String spesialis = input.nextLine();
         System.out.print("Masukkan tingkat pendidikan: ");
@@ -319,7 +313,7 @@ public class Implementasi {
             return;
         }
 
-        DokterHewan dokterHewan = new DokterHewan(nama, id, alamat, noTelp, jenisKelamin, posisi, umur, gaji, spesialis, tingkatPendidikan);
+        DokterHewan dokterHewan = new DokterHewan(nama, id, alamat, noTelp, jenisKelamin, umur, gaji, spesialis, tingkatPendidikan);
         list.add(dokterHewan);
 
         if (input.hasNextLine()) {
@@ -346,8 +340,7 @@ public class Implementasi {
         String namaPelanggan = input.nextLine();
         System.out.print("Masukkan nama hewan: ");
         String namaHewan = input.nextLine();
-        System.out.print("Masukkan jenis hewan: ");
-        String jenisHewan = input.nextLine();
+        String jenisHewan = "Kucing";
         System.out.print("Masukkan warna hewan: ");
         String warnaHewan = input.nextLine();
         ArrayList<JenisPerawatan> kebutuhan = new ArrayList();
@@ -387,36 +380,42 @@ public class Implementasi {
                     kebutuhan.add(JenisPerawatan.suntikVaksin);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 1 telah dipesan");
+                    jumlahKebutuhan++;
 
                 } else if (masukan == 2) {
                     totalHarga += JenisPerawatan.suntikAntiKutu.harga;
                     kebutuhan.add(JenisPerawatan.suntikAntiKutu);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 2 telah dipesan");
+                    jumlahKebutuhan++;
 
                 } else if (masukan == 3) {
                     totalHarga += JenisPerawatan.suntikScabies.harga;
                     kebutuhan.add(JenisPerawatan.suntikScabies);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 3 telah dipesan");
+                    jumlahKebutuhan++;
 
                 } else if (masukan == 4) {
                     totalHarga += JenisPerawatan.suntikAntiJamurKulit.harga;
                     kebutuhan.add(JenisPerawatan.suntikAntiJamurKulit);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 4 telah dipesan");
+                    jumlahKebutuhan++;
 
                 } else if (masukan == 5) {
                     totalHarga += JenisPerawatan.pemeriksaanRawatInap.harga;
                     kebutuhan.add(JenisPerawatan.pemeriksaanRawatInap);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 5 telah dipesan");
+                    jumlahKebutuhan++;
 
                 } else if (masukan == 6) {
                     totalHarga += JenisPerawatan.pemeriksaanRawatJalan.harga;
                     kebutuhan.add(JenisPerawatan.pemeriksaanRawatJalan);
                     nomorPerawatan.add(masukan);
-                    System.out.println("Perawatan nomor 2 telah dipesan");
+                    System.out.println("Perawatan nomor 6 telah dipesan");
+                    jumlahKebutuhan++;
 
                 } else if (masukan > 6 || masukan < 1) {
                     System.out.println("Pilihan " + masukan + "tidak ada");
@@ -436,7 +435,7 @@ public class Implementasi {
                 System.out.println("(Tolong masukkan iya atau tidak)");
                 boolean kondisi = true;
                 while (kondisi) {
-                    System.out.print("Apakah ingin menambah perawatan (ya/tidak) :");
+                    System.out.print("Apakah ingin menambah perawatan (ya/tidak) : ");
                     String perintah2 = input.nextLine();
                     if (perintah2.equalsIgnoreCase("tidak")) {
                         if (nomorPerawatan.isEmpty()) {
@@ -464,6 +463,8 @@ public class Implementasi {
                 break;
             } else if (kebiasaanMencakar.equalsIgnoreCase("ya")) {
                 break;
+            } else {
+                System.out.println("(Tolong masukkan iya atau tidak)");
             }
         }
         System.out.print("Masukkan tahun kelahiran: ");
@@ -476,7 +477,7 @@ public class Implementasi {
             input.nextLine();
             return;
         }
-        System.out.print("Masukkan umur hewan: ");
+        System.out.print("Masukkan umur hewan (bulan) : ");
         // Handle input mismatch exception
         int umurHewan;
         try {
@@ -508,8 +509,7 @@ public class Implementasi {
         String namaPelanggan = input.nextLine();
         System.out.print("Masukkan nama hewan: ");
         String namaHewan = input.nextLine();
-        System.out.print("Masukkan jenis hewan: ");
-        String jenisHewan = input.nextLine();
+        String jenisHewan = "Anjing";
         System.out.print("Masukkan warna hewan: ");
         String warnaHewan = input.nextLine();
         ArrayList<JenisPerawatan> kebutuhan = new ArrayList();
@@ -549,36 +549,42 @@ public class Implementasi {
                     kebutuhan.add(JenisPerawatan.suntikVaksin);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 1 telah dipesan");
+                    jumlahKebutuhan++;
 
                 } else if (masukan == 2) {
                     totalHarga += JenisPerawatan.suntikAntiKutu.harga;
                     kebutuhan.add(JenisPerawatan.suntikAntiKutu);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 2 telah dipesan");
+                    jumlahKebutuhan++;
 
                 } else if (masukan == 3) {
                     totalHarga += JenisPerawatan.suntikScabies.harga;
                     kebutuhan.add(JenisPerawatan.suntikScabies);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 3 telah dipesan");
+                    jumlahKebutuhan++;
 
                 } else if (masukan == 4) {
                     totalHarga += JenisPerawatan.suntikAntiJamurKulit.harga;
                     kebutuhan.add(JenisPerawatan.suntikAntiJamurKulit);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 4 telah dipesan");
+                    jumlahKebutuhan++;
 
                 } else if (masukan == 5) {
                     totalHarga += JenisPerawatan.pemeriksaanRawatInap.harga;
                     kebutuhan.add(JenisPerawatan.pemeriksaanRawatInap);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 5 telah dipesan");
+                    jumlahKebutuhan++;
 
                 } else if (masukan == 6) {
                     totalHarga += JenisPerawatan.pemeriksaanRawatJalan.harga;
                     kebutuhan.add(JenisPerawatan.pemeriksaanRawatJalan);
                     nomorPerawatan.add(masukan);
-                    System.out.println("Perawatan nomor 2 telah dipesan");
+                    System.out.println("Perawatan nomor 6 telah dipesan");
+                    jumlahKebutuhan++;
 
                 } else if (masukan > 6 || masukan < 1) {
                     System.out.println("Pilihan " + masukan + "tidak ada");
@@ -598,7 +604,7 @@ public class Implementasi {
                 System.out.println("(Tolong masukkan iya atau tidak)");
                 boolean kondisi = true;
                 while (kondisi) {
-                    System.out.print("Apakah ingin menambah perawatan (ya/tidak) :");
+                    System.out.print("Apakah ingin menambah perawatan (ya/tidak) : ");
                     String perintah2 = input.nextLine();
                     if (perintah2.equalsIgnoreCase("tidak")) {
                         if (nomorPerawatan.isEmpty()) {
@@ -626,6 +632,8 @@ public class Implementasi {
                 break;
             } else if (kebiasaanMenggigit.equalsIgnoreCase("ya")) {
                 break;
+            } else {
+                System.out.println("(Tolong masukkan iya atau tidak)");
             }
         }
         System.out.print("Masukkan tahun kelahiran: ");
@@ -638,7 +646,7 @@ public class Implementasi {
             input.nextLine();
             return;
         }
-        System.out.print("Masukkan umur hewan: ");
+        System.out.print("Masukkan umur hewan (bulan) : ");
         // Handle input mismatch exception
         int umurHewan;
         try {
@@ -666,8 +674,7 @@ public class Implementasi {
         String namaPelanggan = input.nextLine();
         System.out.print("Masukkan nama hewan: ");
         String namaHewan = input.nextLine();
-        System.out.print("Masukkan jenis hewan: ");
-        String jenisHewan = input.nextLine();
+        String jenisHewan = "Kelinci";
         System.out.print("Masukkan warna hewan: ");
         String warnaHewan = input.nextLine();
         ArrayList<JenisPerawatan> kebutuhan = new ArrayList();
@@ -707,43 +714,50 @@ public class Implementasi {
                     kebutuhan.add(JenisPerawatan.suntikVaksin);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 1 telah dipesan");
+                    jumlahKebutuhan++;
+                    
 
                 } else if (masukan == 2) {
                     totalHarga += JenisPerawatan.suntikAntiKutu.harga;
                     kebutuhan.add(JenisPerawatan.suntikAntiKutu);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 2 telah dipesan");
+                    jumlahKebutuhan++;
 
                 } else if (masukan == 3) {
                     totalHarga += JenisPerawatan.suntikScabies.harga;
                     kebutuhan.add(JenisPerawatan.suntikScabies);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 3 telah dipesan");
+                    jumlahKebutuhan++;
 
                 } else if (masukan == 4) {
                     totalHarga += JenisPerawatan.suntikAntiJamurKulit.harga;
                     kebutuhan.add(JenisPerawatan.suntikAntiJamurKulit);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 4 telah dipesan");
+                    jumlahKebutuhan++;
 
                 } else if (masukan == 5) {
                     totalHarga += JenisPerawatan.pemeriksaanRawatInap.harga;
                     kebutuhan.add(JenisPerawatan.pemeriksaanRawatInap);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 5 telah dipesan");
+                    jumlahKebutuhan++;
 
                 } else if (masukan == 6) {
                     totalHarga += JenisPerawatan.pemeriksaanRawatJalan.harga;
                     kebutuhan.add(JenisPerawatan.pemeriksaanRawatJalan);
                     nomorPerawatan.add(masukan);
-                    System.out.println("Perawatan nomor 2 telah dipesan");
+                    System.out.println("Perawatan nomor 6 telah dipesan");
+                    jumlahKebutuhan++;
 
                 } else if (masukan > 6 || masukan < 1) {
                     System.out.println("Pilihan " + masukan + " tidak ada");
                 }
             }
 
-            System.out.print("Apakah ingin menambah perawatan (ya/tidak) :");
+            System.out.print("Apakah ingin menambah perawatan (ya/tidak) : ");
             String perintah = input.nextLine().trim();
             if (perintah.equalsIgnoreCase("tidak")) {
                 if (nomorPerawatan.isEmpty()) {
@@ -784,6 +798,8 @@ public class Implementasi {
                 break;
             } else if (kebiasaanMelompat.equalsIgnoreCase("ya")) {
                 break;
+            } else {
+                System.out.println("(Tolong masukkan iya atau tidak)");
             }
         }
         System.out.print("Masukkan tahun kelahiran: ");
@@ -796,7 +812,7 @@ public class Implementasi {
             input.nextLine();
             return;
         }
-        System.out.print("Masukkan umur hewan: ");
+        System.out.print("Masukkan umur hewan (bulan) : ");
         // Handle input mismatch exception
         int umurHewan;
         try {
