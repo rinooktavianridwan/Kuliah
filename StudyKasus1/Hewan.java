@@ -13,7 +13,7 @@ public class Hewan implements CetakInfo {
     public String namaHewan;
     public String jenisHewan;
     public String warnaHewan;
-    public ArrayList<JenisPerawatan> kebutuhan;
+    public ArrayList<JenisPerawatan> jenisPerawatan;
     public String riwayatPenyakit;
     public int tahunKelahiran;
     public int umurHewan;
@@ -22,13 +22,13 @@ public class Hewan implements CetakInfo {
     public Hewan() {
     }
 
-    public Hewan(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, ArrayList<JenisPerawatan> kebutuhan, String riwayatPenyakit, int tahunKelahiran, int umurHewan, int totalHarga) {
+    public Hewan(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, ArrayList<JenisPerawatan> jenisPerawatan, String riwayatPenyakit, int tahunKelahiran, int umurHewan, int totalHarga) {
         this.noPelanggan = noPelanggan;
         this.namaPelanggan = namaPelanggan;
         this.namaHewan = namaHewan;
         this.jenisHewan = jenisHewan;
         this.warnaHewan = warnaHewan;
-        this.kebutuhan = kebutuhan;
+        this.jenisPerawatan = jenisPerawatan;
         this.riwayatPenyakit = riwayatPenyakit;
         this.tahunKelahiran = tahunKelahiran;
         this.umurHewan = umurHewan;
@@ -43,9 +43,9 @@ public class Hewan implements CetakInfo {
         System.out.println("Warna Hewan\t\t\t\t: " + warnaHewan);
         System.out.println("Kebutuhan \t\t\t\t: ");
         int j = 1;
-        for (int i = 0; i < kebutuhan.size(); i++) {
-            if (kebutuhan.get(i) != null) {
-                System.out.println(j + ". " + kebutuhan.get(i) +  "\t\t"+kebutuhan.get(i).harga);
+        for (int i = 0; i < jenisPerawatan.size(); i++) {
+            if (jenisPerawatan.get(i) != null) {
+                System.out.println(j + ". " + jenisPerawatan.get(i) +  "\t\t"+jenisPerawatan.get(i).harga);
                 j++;
             }
         }
@@ -65,8 +65,8 @@ class Kucing extends Hewan {
     public Kucing() {
     }
 
-    public Kucing(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, ArrayList<JenisPerawatan> kebutuhan, String riwayatPenyakit, int tahunKelahiran, int umurHewan, int totalHarga, String kebiasaanMencakar) {
-        super(noPelanggan, namaPelanggan, namaHewan, jenisHewan, warnaHewan, kebutuhan, riwayatPenyakit, tahunKelahiran, umurHewan, totalHarga);
+    public Kucing(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, ArrayList<JenisPerawatan> jenisPerawatan, String riwayatPenyakit, int tahunKelahiran, int umurHewan, int totalHarga, String kebiasaanMencakar) {
+        super(noPelanggan, namaPelanggan, namaHewan, jenisHewan, warnaHewan, jenisPerawatan, riwayatPenyakit, tahunKelahiran, umurHewan, totalHarga);
         this.kebiasaanMencakar = kebiasaanMencakar;
     }
 
@@ -83,8 +83,8 @@ class Anjing extends Hewan {
     public Anjing() {
     }
 
-    public Anjing(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, ArrayList<JenisPerawatan> kebutuhan, String riwayatPenyakit, int tahunKelahiran, int umurHewan, int totalHarga, String kebisaanMenggigit) {
-        super(noPelanggan, namaPelanggan, namaHewan, jenisHewan, warnaHewan, kebutuhan, riwayatPenyakit, tahunKelahiran, umurHewan, totalHarga);
+    public Anjing(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, ArrayList<JenisPerawatan> jenisPerawatan, String riwayatPenyakit, int tahunKelahiran, int umurHewan, int totalHarga, String kebisaanMenggigit) {
+        super(noPelanggan, namaPelanggan, namaHewan, jenisHewan, warnaHewan, jenisPerawatan, riwayatPenyakit, tahunKelahiran, umurHewan, totalHarga);
         this.kebisaanMenggigit = kebisaanMenggigit;
     }
 
@@ -101,8 +101,8 @@ class Kelinci extends Hewan {
     public Kelinci() {
     }
 
-    public Kelinci(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, ArrayList<JenisPerawatan> kebutuhan, String riwayatPenyakit, int tahunKelahiran, int umurHewan, int totalHarga, String kebiasaanMelompat) {
-        super(noPelanggan, namaPelanggan, namaHewan, jenisHewan, warnaHewan, kebutuhan, riwayatPenyakit, tahunKelahiran, umurHewan, totalHarga);
+    public Kelinci(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, ArrayList<JenisPerawatan> jenisPerawatan, String riwayatPenyakit, int tahunKelahiran, int umurHewan, int totalHarga, String kebiasaanMelompat) {
+        super(noPelanggan, namaPelanggan, namaHewan, jenisHewan, warnaHewan, jenisPerawatan, riwayatPenyakit, tahunKelahiran, umurHewan, totalHarga);
         this.kebiasaanMelompat = kebiasaanMelompat;
     }
 
@@ -113,12 +113,15 @@ class Kelinci extends Hewan {
 }
 
 enum JenisPerawatan {
-    suntikVaksin(115000),
-    suntikAntiKutu(75000),
-    suntikScabies(70000),
-    suntikAntiJamurKulit(70000),
-    pemeriksaanRawatInap(150000),
-    pemeriksaanRawatJalan(65000),;
+    SuntikVaksin(115000),
+    SuntikAntiKutu(75000),
+    SuntikScabies(70000),
+    SuntikAntiJamurKulit(70000),
+    PemeriksaanRawatInap(150000),
+    PemeriksaanRawatJalan(65000),
+    Mandi (40000),
+    Cukur (35000),
+    Trimming (20000);
 
     private JenisPerawatan(int harga) {
         this.harga = harga;

@@ -15,6 +15,9 @@ public class Implementasi {
         ArrayList<Hewan> listHewan = new ArrayList<>();
         LinkedHashSet<String> riwayatPelayanan = new LinkedHashSet<>();
 
+        System.out.println("===============================================");
+        System.out.println("\t\tAPLIKASI PET-HOUSE");
+        System.out.println("===============================================");
         while (true) {
             System.out.println("\nMenu");
             System.out.println("0. Keluar");
@@ -348,76 +351,101 @@ public class Implementasi {
         int totalHarga = 0;
         int jumlahKebutuhan = 0;
         while (true) {
-            if (jumlahKebutuhan == 6) {
+            if (jumlahKebutuhan == 9) {
                 System.out.println("Anda telah memesan semua kebutuhan untuk perawatan hewan");
                 break;
             }
             System.out.println("Masukkan kebutuhan pelayanan : ");
             System.out.println("Jenis Perawatan : ");
-            System.out.println("1. Suntik Vaksin\t\t\t (Rp.115.000)");
-            System.out.println("2. Suntik Anti Kutu\t\t\t (Rp.75.000)");
-            System.out.println("3. Suntik Scabies\t\t (Rp.70.000)");
-            System.out.println("4. Suntik Anti Jamur Kulit\t (Rp.70.000)");
-            System.out.println("5. Pemeriksaan Rawat Inap\t (Rp.150.000)");
-            System.out.println("6. Pemeriksaan Rawat Jalan\t (Rp.65.000)");
+            System.out.println("1. Suntik Vaksin\t\t\t(Rp.115.000)");
+            System.out.println("2. Suntik Anti Kutu\t\t\t(Rp.75.000)");
+            System.out.println("3. Suntik Scabies\t\t(Rp.70.000)");
+            System.out.println("4. Suntik Anti Jamur Kulit\t(Rp.70.000)");
+            System.out.println("5. Pemeriksaan Rawat Inap\t(Rp.150.000)");
+            System.out.println("6. Pemeriksaan Rawat Jalan\t(Rp.65.000)");
+            System.out.println("7. Mandi\t\t\t\t(Rp. 40.000)");
+            System.out.println("8. Cukur\t\t\t\t(Rp. 35.000");
+            System.out.println("9. Trimming\t\t\t\t(Rp. 20.000");
             System.out.println("Pilihan boleh lebih dari satu (Pisahkan spasi)");
             System.out.println("Contoh : 1 2 3 4 5 6");
             System.out.print("Pilihan : ");
             String pilihan = input.nextLine().trim();
             String[] KumpulanPilihan = pilihan.split(" ");
             for (int i = 0; i < KumpulanPilihan.length; i++) {
+                // Handle input Number Format Exception
                 int masukan;
                 try {
                     masukan = Integer.parseInt(KumpulanPilihan[i]);
                 } catch (NumberFormatException e) {
-                    System.out.println("Input pilihan " + KumpulanPilihan[i] + "tidak valid");
+                    System.out.println("Input pilihan " + KumpulanPilihan[i] + " tidak valid");
                     break;
                 }
                 if (nomorPerawatan.contains(masukan)) {
                     System.out.println("Anda sudah memilih jenis perawatan nomor " + masukan + " sebelumnya");
                 } else if (masukan == 1) {
-                    totalHarga += JenisPerawatan.suntikVaksin.harga;
-                    kebutuhan.add(JenisPerawatan.suntikVaksin);
+                    totalHarga += JenisPerawatan.SuntikVaksin.harga;
+                    kebutuhan.add(JenisPerawatan.SuntikVaksin);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 1 telah dipesan");
                     jumlahKebutuhan++;
 
                 } else if (masukan == 2) {
-                    totalHarga += JenisPerawatan.suntikAntiKutu.harga;
-                    kebutuhan.add(JenisPerawatan.suntikAntiKutu);
+                    totalHarga += JenisPerawatan.SuntikAntiKutu.harga;
+                    kebutuhan.add(JenisPerawatan.SuntikAntiKutu);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 2 telah dipesan");
                     jumlahKebutuhan++;
 
                 } else if (masukan == 3) {
-                    totalHarga += JenisPerawatan.suntikScabies.harga;
-                    kebutuhan.add(JenisPerawatan.suntikScabies);
+                    totalHarga += JenisPerawatan.SuntikScabies.harga;
+                    kebutuhan.add(JenisPerawatan.SuntikScabies);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 3 telah dipesan");
                     jumlahKebutuhan++;
 
                 } else if (masukan == 4) {
-                    totalHarga += JenisPerawatan.suntikAntiJamurKulit.harga;
-                    kebutuhan.add(JenisPerawatan.suntikAntiJamurKulit);
+                    totalHarga += JenisPerawatan.SuntikAntiJamurKulit.harga;
+                    kebutuhan.add(JenisPerawatan.SuntikAntiJamurKulit);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 4 telah dipesan");
                     jumlahKebutuhan++;
 
                 } else if (masukan == 5) {
-                    totalHarga += JenisPerawatan.pemeriksaanRawatInap.harga;
-                    kebutuhan.add(JenisPerawatan.pemeriksaanRawatInap);
+                    totalHarga += JenisPerawatan.PemeriksaanRawatInap.harga;
+                    kebutuhan.add(JenisPerawatan.PemeriksaanRawatInap);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 5 telah dipesan");
                     jumlahKebutuhan++;
 
                 } else if (masukan == 6) {
-                    totalHarga += JenisPerawatan.pemeriksaanRawatJalan.harga;
-                    kebutuhan.add(JenisPerawatan.pemeriksaanRawatJalan);
+                    totalHarga += JenisPerawatan.PemeriksaanRawatJalan.harga;
+                    kebutuhan.add(JenisPerawatan.PemeriksaanRawatJalan);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 6 telah dipesan");
                     jumlahKebutuhan++;
 
-                } else if (masukan > 6 || masukan < 1) {
+                } else if (masukan == 7) {
+                    totalHarga += JenisPerawatan.Mandi.harga;
+                    kebutuhan.add(JenisPerawatan.Mandi);
+                    nomorPerawatan.add(masukan);
+                    System.out.println("Perawatan nomor 7 telah dipesan");
+                    jumlahKebutuhan++;
+
+                } else if (masukan == 8) {
+                    totalHarga += JenisPerawatan.Cukur.harga;
+                    kebutuhan.add(JenisPerawatan.Cukur);
+                    nomorPerawatan.add(masukan);
+                    System.out.println("Perawatan nomor 8 telah dipesan");
+                    jumlahKebutuhan++;
+
+                } else if (masukan == 9) {
+                    totalHarga += JenisPerawatan.Trimming.harga;
+                    kebutuhan.add(JenisPerawatan.Trimming);
+                    nomorPerawatan.add(masukan);
+                    System.out.println("Perawatan nomor 9 telah dipesan");
+                    jumlahKebutuhan++;
+
+                } else if (masukan > 9 || masukan < 1) {
                     System.out.println("Pilihan " + masukan + "tidak ada");
                 }
             }
@@ -494,11 +522,6 @@ public class Implementasi {
         if (input.hasNextLine()) {
             input.nextLine();
         }
-//        if (kebutuhan.equalsIgnoreCase("grooming")) {
-//            System.out.println("\n[Kucing sudah di grooming]");
-//        } else if (kebutuhan.equalsIgnoreCase("periksa")) {
-//            System.out.println("\n[Kucing sudah di periksa]");
-//        }
     }
 
     static void inputHewanAnjing(ArrayList<Hewan> list) {
@@ -517,76 +540,101 @@ public class Implementasi {
         int totalHarga = 0;
         int jumlahKebutuhan = 0;
         while (true) {
-            if (jumlahKebutuhan == 6) {
+            if (jumlahKebutuhan == 9) {
                 System.out.println("Anda telah memesan semua kebutuhan untuk perawatan hewan");
                 break;
             }
             System.out.println("Masukkan kebutuhan pelayanan : ");
             System.out.println("Jenis Perawatan : ");
-            System.out.println("1. Suntik Vaksin\t\t\t (Rp.115.000)");
-            System.out.println("2. Suntik Anti Kutu\t\t\t (Rp.75.000)");
-            System.out.println("3. Suntik Scabies\t\t (Rp.70.000)");
-            System.out.println("4. Suntik Anti Jamur Kulit\t (Rp.70.000)");
-            System.out.println("5. Pemeriksaan Rawat Inap\t (Rp.150.000)");
-            System.out.println("6. Pemeriksaan Rawat Jalan\t (Rp.65.000)");
+            System.out.println("1. Suntik Vaksin\t\t\t(Rp. 115.000)");
+            System.out.println("2. Suntik Anti Kutu\t\t\t(Rp. 75.000)");
+            System.out.println("3. Suntik Scabies\t\t(Rp. 70.000)");
+            System.out.println("4. Suntik Anti Jamur Kulit\t(Rp. 70.000)");
+            System.out.println("5. Pemeriksaan Rawat Inap\t(Rp. 150.000)");
+            System.out.println("6. Pemeriksaan Rawat Jalan\t(Rp. 65.000)");
+            System.out.println("7. Mandi\t\t\t\t(Rp. 40.000)");
+            System.out.println("8. Cukur\t\t\t\t(Rp. 35.000");
+            System.out.println("9. Trimming\t\t\t\t(Rp. 20.000");
             System.out.println("Pilihan boleh lebih dari satu (Pisahkan spasi)");
-            System.out.println("Contoh : 1 2 3 4 5 6");
+            System.out.println("Contoh : 1 2 3 4 5 6 7 8 9");
             System.out.print("Pilihan : ");
             String pilihan = input.nextLine().trim();
             String[] KumpulanPilihan = pilihan.split(" ");
             for (int i = 0; i < KumpulanPilihan.length; i++) {
+                // Handle input Number Format Exception
                 int masukan;
                 try {
                     masukan = Integer.parseInt(KumpulanPilihan[i]);
                 } catch (NumberFormatException e) {
-                    System.out.println("Input pilihan " + KumpulanPilihan[i] + "tidak valid");
+                    System.out.println("Input pilihan " + KumpulanPilihan[i] + " tidak valid");
                     break;
                 }
                 if (nomorPerawatan.contains(masukan)) {
                     System.out.println("Anda sudah memilih jenis perawatan nomor " + masukan + " sebelumnya");
                 } else if (masukan == 1) {
-                    totalHarga += JenisPerawatan.suntikVaksin.harga;
-                    kebutuhan.add(JenisPerawatan.suntikVaksin);
+                    totalHarga += JenisPerawatan.SuntikVaksin.harga;
+                    kebutuhan.add(JenisPerawatan.SuntikVaksin);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 1 telah dipesan");
                     jumlahKebutuhan++;
 
                 } else if (masukan == 2) {
-                    totalHarga += JenisPerawatan.suntikAntiKutu.harga;
-                    kebutuhan.add(JenisPerawatan.suntikAntiKutu);
+                    totalHarga += JenisPerawatan.SuntikAntiKutu.harga;
+                    kebutuhan.add(JenisPerawatan.SuntikAntiKutu);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 2 telah dipesan");
                     jumlahKebutuhan++;
 
                 } else if (masukan == 3) {
-                    totalHarga += JenisPerawatan.suntikScabies.harga;
-                    kebutuhan.add(JenisPerawatan.suntikScabies);
+                    totalHarga += JenisPerawatan.SuntikScabies.harga;
+                    kebutuhan.add(JenisPerawatan.SuntikScabies);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 3 telah dipesan");
                     jumlahKebutuhan++;
 
                 } else if (masukan == 4) {
-                    totalHarga += JenisPerawatan.suntikAntiJamurKulit.harga;
-                    kebutuhan.add(JenisPerawatan.suntikAntiJamurKulit);
+                    totalHarga += JenisPerawatan.SuntikAntiJamurKulit.harga;
+                    kebutuhan.add(JenisPerawatan.SuntikAntiJamurKulit);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 4 telah dipesan");
                     jumlahKebutuhan++;
 
                 } else if (masukan == 5) {
-                    totalHarga += JenisPerawatan.pemeriksaanRawatInap.harga;
-                    kebutuhan.add(JenisPerawatan.pemeriksaanRawatInap);
+                    totalHarga += JenisPerawatan.PemeriksaanRawatInap.harga;
+                    kebutuhan.add(JenisPerawatan.PemeriksaanRawatInap);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 5 telah dipesan");
                     jumlahKebutuhan++;
 
                 } else if (masukan == 6) {
-                    totalHarga += JenisPerawatan.pemeriksaanRawatJalan.harga;
-                    kebutuhan.add(JenisPerawatan.pemeriksaanRawatJalan);
+                    totalHarga += JenisPerawatan.PemeriksaanRawatJalan.harga;
+                    kebutuhan.add(JenisPerawatan.PemeriksaanRawatJalan);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 6 telah dipesan");
                     jumlahKebutuhan++;
 
-                } else if (masukan > 6 || masukan < 1) {
+                } else if (masukan == 7) {
+                    totalHarga += JenisPerawatan.Mandi.harga;
+                    kebutuhan.add(JenisPerawatan.Mandi);
+                    nomorPerawatan.add(masukan);
+                    System.out.println("Perawatan nomor 7 telah dipesan");
+                    jumlahKebutuhan++;
+
+                } else if (masukan == 8) {
+                    totalHarga += JenisPerawatan.Cukur.harga;
+                    kebutuhan.add(JenisPerawatan.Cukur);
+                    nomorPerawatan.add(masukan);
+                    System.out.println("Perawatan nomor 8 telah dipesan");
+                    jumlahKebutuhan++;
+
+                } else if (masukan == 9) {
+                    totalHarga += JenisPerawatan.Trimming.harga;
+                    kebutuhan.add(JenisPerawatan.Trimming);
+                    nomorPerawatan.add(masukan);
+                    System.out.println("Perawatan nomor 9 telah dipesan");
+                    jumlahKebutuhan++;
+
+                } else if (masukan > 9 || masukan < 1) {
                     System.out.println("Pilihan " + masukan + "tidak ada");
                 }
             }
@@ -682,7 +730,7 @@ public class Implementasi {
         int totalHarga = 0;
         int jumlahKebutuhan = 0;
         while (true) {
-            if (jumlahKebutuhan == 6) {
+            if (jumlahKebutuhan == 9) {
                 System.out.println("Anda telah memesan semua kebutuhan untuk perawatan hewan");
                 break;
             }
@@ -694,65 +742,89 @@ public class Implementasi {
             System.out.println("4. Suntik Anti Jamur Kulit\t (Rp.70.000)");
             System.out.println("5. Pemeriksaan Rawat Inap\t (Rp.150.000)");
             System.out.println("6. Pemeriksaan Rawat Jalan\t (Rp.65.000)");
+            System.out.println("7. Mandi\t\t\t\t(Rp. 40.000)");
+            System.out.println("8. Cukur\t\t\t\t(Rp. 35.000");
+            System.out.println("9. Trimming\t\t\t\t(Rp. 20.000");
             System.out.println("Pilihan boleh lebih dari satu (Pisahkan spasi)");
             System.out.println("Contoh : 1 2 3 4 5 6");
             System.out.print("Pilihan : ");
             String pilihan = input.nextLine().trim();
             String[] KumpulanPilihan = pilihan.split(" ");
             for (int i = 0; i < KumpulanPilihan.length; i++) {
+                // Handle input Number Format Exception
                 int masukan;
                 try {
                     masukan = Integer.parseInt(KumpulanPilihan[i]);
                 } catch (NumberFormatException e) {
-                    System.out.println("Input pilihan " + KumpulanPilihan[i] + "tidak valid");
+                    System.out.println("Input pilihan " + KumpulanPilihan[i] + " tidak valid");
                     break;
                 }
                 if (nomorPerawatan.contains(masukan)) {
                     System.out.println("Anda sudah memilih jenis perawatan nomor " + masukan + " sebelumnya");
                 } else if (masukan == 1) {
-                    totalHarga += JenisPerawatan.suntikVaksin.harga;
-                    kebutuhan.add(JenisPerawatan.suntikVaksin);
+                    totalHarga += JenisPerawatan.SuntikVaksin.harga;
+                    kebutuhan.add(JenisPerawatan.SuntikVaksin);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 1 telah dipesan");
                     jumlahKebutuhan++;
-                    
 
                 } else if (masukan == 2) {
-                    totalHarga += JenisPerawatan.suntikAntiKutu.harga;
-                    kebutuhan.add(JenisPerawatan.suntikAntiKutu);
+                    totalHarga += JenisPerawatan.SuntikAntiKutu.harga;
+                    kebutuhan.add(JenisPerawatan.SuntikAntiKutu);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 2 telah dipesan");
                     jumlahKebutuhan++;
 
                 } else if (masukan == 3) {
-                    totalHarga += JenisPerawatan.suntikScabies.harga;
-                    kebutuhan.add(JenisPerawatan.suntikScabies);
+                    totalHarga += JenisPerawatan.SuntikScabies.harga;
+                    kebutuhan.add(JenisPerawatan.SuntikScabies);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 3 telah dipesan");
                     jumlahKebutuhan++;
 
                 } else if (masukan == 4) {
-                    totalHarga += JenisPerawatan.suntikAntiJamurKulit.harga;
-                    kebutuhan.add(JenisPerawatan.suntikAntiJamurKulit);
+                    totalHarga += JenisPerawatan.SuntikAntiJamurKulit.harga;
+                    kebutuhan.add(JenisPerawatan.SuntikAntiJamurKulit);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 4 telah dipesan");
                     jumlahKebutuhan++;
 
                 } else if (masukan == 5) {
-                    totalHarga += JenisPerawatan.pemeriksaanRawatInap.harga;
-                    kebutuhan.add(JenisPerawatan.pemeriksaanRawatInap);
+                    totalHarga += JenisPerawatan.PemeriksaanRawatInap.harga;
+                    kebutuhan.add(JenisPerawatan.PemeriksaanRawatInap);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 5 telah dipesan");
                     jumlahKebutuhan++;
 
                 } else if (masukan == 6) {
-                    totalHarga += JenisPerawatan.pemeriksaanRawatJalan.harga;
-                    kebutuhan.add(JenisPerawatan.pemeriksaanRawatJalan);
+                    totalHarga += JenisPerawatan.PemeriksaanRawatJalan.harga;
+                    kebutuhan.add(JenisPerawatan.PemeriksaanRawatJalan);
                     nomorPerawatan.add(masukan);
                     System.out.println("Perawatan nomor 6 telah dipesan");
                     jumlahKebutuhan++;
 
-                } else if (masukan > 6 || masukan < 1) {
+                } else if (masukan == 7) {
+                    totalHarga += JenisPerawatan.Mandi.harga;
+                    kebutuhan.add(JenisPerawatan.Mandi);
+                    nomorPerawatan.add(masukan);
+                    System.out.println("Perawatan nomor 7 telah dipesan");
+                    jumlahKebutuhan++;
+
+                } else if (masukan == 8) {
+                    totalHarga += JenisPerawatan.Cukur.harga;
+                    kebutuhan.add(JenisPerawatan.Cukur);
+                    nomorPerawatan.add(masukan);
+                    System.out.println("Perawatan nomor 8 telah dipesan");
+                    jumlahKebutuhan++;
+
+                } else if (masukan == 9) {
+                    totalHarga += JenisPerawatan.Trimming.harga;
+                    kebutuhan.add(JenisPerawatan.Trimming);
+                    nomorPerawatan.add(masukan);
+                    System.out.println("Perawatan nomor 9 telah dipesan");
+                    jumlahKebutuhan++;
+
+                } else if (masukan > 9 || masukan < 1) {
                     System.out.println("Pilihan " + masukan + " tidak ada");
                 }
             }
