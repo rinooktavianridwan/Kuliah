@@ -4,14 +4,16 @@
  */
 package StudyKasus1;
 
-public class Hewan implements Infokan {
+import java.util.ArrayList;
+
+public class Hewan implements CetakInfo {
 
     public String noPelanggan;
     public String namaPelanggan;
     public String namaHewan;
     public String jenisHewan;
     public String warnaHewan;
-    public String[] kebutuhan;
+    public ArrayList<JenisPerawatan> kebutuhan;
     public String riwayatPenyakit;
     public int tahunKelahiran;
     public int umurHewan;
@@ -20,7 +22,7 @@ public class Hewan implements Infokan {
     public Hewan() {
     }
 
-    public Hewan(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, String[] kebutuhan, String riwayatPenyakit, int tahunKelahiran, int umurHewan, int totalHarga) {
+    public Hewan(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, ArrayList<JenisPerawatan> kebutuhan, String riwayatPenyakit, int tahunKelahiran, int umurHewan, int totalHarga) {
         this.noPelanggan = noPelanggan;
         this.namaPelanggan = namaPelanggan;
         this.namaHewan = namaHewan;
@@ -33,10 +35,6 @@ public class Hewan implements Infokan {
         this.totalHarga = totalHarga;
     }
 
-    @Override
-    public void cetakInfo() {
-    }
-
     public void print() {
         System.out.println("\nID Pelanggan\t\t\t: " + noPelanggan);
         System.out.println("Nama Pelanggan\t\t\t: " + namaPelanggan);
@@ -45,9 +43,9 @@ public class Hewan implements Infokan {
         System.out.println("Warna Hewan\t\t\t\t: " + warnaHewan);
         System.out.println("Kebutuhan \t\t\t\t: ");
         int j = 1;
-        for (int i = 0; i < kebutuhan.length; i++) {
-            if (kebutuhan[i] != null) {
-                System.out.println(j + ". " + kebutuhan[i]);
+        for (int i = 0; i < kebutuhan.size(); i++) {
+            if (kebutuhan.get(i) != null) {
+                System.out.println(j + ". " + kebutuhan.get(i) +  "\t\t"+kebutuhan.get(i).harga);
                 j++;
             }
         }
@@ -67,7 +65,7 @@ class Kucing extends Hewan {
     public Kucing() {
     }
 
-    public Kucing(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, String[] kebutuhan, String riwayatPenyakit, int tahunKelahiran, int umurHewan, int totalHarga, String kebiasaanMencakar) {
+    public Kucing(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, ArrayList<JenisPerawatan> kebutuhan, String riwayatPenyakit, int tahunKelahiran, int umurHewan, int totalHarga, String kebiasaanMencakar) {
         super(noPelanggan, namaPelanggan, namaHewan, jenisHewan, warnaHewan, kebutuhan, riwayatPenyakit, tahunKelahiran, umurHewan, totalHarga);
         this.kebiasaanMencakar = kebiasaanMencakar;
     }
@@ -85,7 +83,7 @@ class Anjing extends Hewan {
     public Anjing() {
     }
 
-    public Anjing(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, String[] kebutuhan, String riwayatPenyakit, int tahunKelahiran, int umurHewan, int totalHarga, String kebisaanMenggigit) {
+    public Anjing(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, ArrayList<JenisPerawatan> kebutuhan, String riwayatPenyakit, int tahunKelahiran, int umurHewan, int totalHarga, String kebisaanMenggigit) {
         super(noPelanggan, namaPelanggan, namaHewan, jenisHewan, warnaHewan, kebutuhan, riwayatPenyakit, tahunKelahiran, umurHewan, totalHarga);
         this.kebisaanMenggigit = kebisaanMenggigit;
     }
@@ -103,7 +101,7 @@ class Kelinci extends Hewan {
     public Kelinci() {
     }
 
-    public Kelinci(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, String[] kebutuhan, String riwayatPenyakit, int tahunKelahiran, int umurHewan, int totalHarga, String kebiasaanMelompat) {
+    public Kelinci(String noPelanggan, String namaPelanggan, String namaHewan, String jenisHewan, String warnaHewan, ArrayList<JenisPerawatan> kebutuhan, String riwayatPenyakit, int tahunKelahiran, int umurHewan, int totalHarga, String kebiasaanMelompat) {
         super(noPelanggan, namaPelanggan, namaHewan, jenisHewan, warnaHewan, kebutuhan, riwayatPenyakit, tahunKelahiran, totalHarga, umurHewan);
         this.kebiasaanMelompat = kebiasaanMelompat;
     }
@@ -114,42 +112,18 @@ class Kelinci extends Hewan {
     }
 }
 
-class Perawatan {
-
-    private JenisPerawatan jenisPerawatan;
-
-    public Perawatan(JenisPerawatan jenisPerawatan) {
-        this.jenisPerawatan = jenisPerawatan;
-    }
-
-    public double getPrice() {
-        switch (jenisPerawatan) {
-            case suntikVaksin:
-                return 115000.0;
-            case suntikAntiKutu:
-                return 75000.0;
-            case suntikScabies:
-                return 70000.0;
-            case suntikAntiJamurKulit:
-                return 70000.0;
-            case pemeriksaanRawatInap:
-                return 150000.0;
-            case pemeriksaanRawatJalan:
-                return 65000.0;
-            default:
-                return 0;
-        }
-
-    }
-
-}
-
 enum JenisPerawatan {
-    suntikVaksin,
-    suntikAntiKutu,
-    suntikScabies,
-    suntikAntiJamurKulit,
-    pemeriksaanRawatInap,
-    pemeriksaanRawatJalan,
+    suntikVaksin(115000),
+    suntikAntiKutu(75000),
+    suntikScabies(70000),
+    suntikAntiJamurKulit(70000),
+    pemeriksaanRawatInap(150000),
+    pemeriksaanRawatJalan(65000),;
+
+    private JenisPerawatan(int harga) {
+        this.harga = harga;
+    }
+
+    final int harga;
 
 }
