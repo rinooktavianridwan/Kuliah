@@ -78,17 +78,17 @@ class Admin extends Karyawan implements CetakInfo {
                 if (((Kucing) hewan).jenisPerawatan.get(i) != null) {
                     switch (hewan.jenisPerawatan.get(i)) {
                         case SuntikVaksin ->
-                            list.add(JenisPerawatan.SuntikVaksin + " oleh doktor hewan");
+                            list.add(JenisPerawatan.SuntikVaksin + " oleh dokter hewan");
                         case SuntikAntiKutu ->
-                            list.add(JenisPerawatan.SuntikAntiKutu + " oleh doktor hewan");
+                            list.add(JenisPerawatan.SuntikAntiKutu + " oleh dokter hewan");
                         case SuntikScabies ->
-                            list.add(JenisPerawatan.SuntikScabies + " oleh doktor hewan");
+                            list.add(JenisPerawatan.SuntikScabies + " oleh dokter hewan");
                         case SuntikAntiJamurKulit ->
-                            list.add(JenisPerawatan.SuntikAntiJamurKulit + " oleh doktor hewan");
+                            list.add(JenisPerawatan.SuntikAntiJamurKulit + " oleh dokter hewan");
                         case PemeriksaanRawatInap ->
-                            list.add(JenisPerawatan.PemeriksaanRawatInap + " oleh doktor hewan");
+                            list.add(JenisPerawatan.PemeriksaanRawatInap + " oleh dokter hewan");
                         case PemeriksaanRawatJalan ->
-                            list.add(JenisPerawatan.PemeriksaanRawatJalan + " oleh doktor hewan");
+                            list.add(JenisPerawatan.PemeriksaanRawatJalan + " oleh dokter hewan");
                         case Mandi ->
                             list.add(JenisPerawatan.Mandi + " oleh groomer");
                         case Cukur ->
@@ -109,17 +109,17 @@ class Admin extends Karyawan implements CetakInfo {
                 if (((Anjing) hewan).jenisPerawatan.get(i) != null) {
                     switch (hewan.jenisPerawatan.get(i)) {
                         case SuntikVaksin ->
-                            list.add(JenisPerawatan.SuntikVaksin + " oleh doktor hewan");
+                            list.add(JenisPerawatan.SuntikVaksin + " oleh dokter hewan");
                         case SuntikAntiKutu ->
-                            list.add(JenisPerawatan.SuntikAntiKutu + " oleh doktor hewan");
+                            list.add(JenisPerawatan.SuntikAntiKutu + " oleh dokter hewan");
                         case SuntikScabies ->
-                            list.add(JenisPerawatan.SuntikScabies + " oleh doktor hewan");
+                            list.add(JenisPerawatan.SuntikScabies + " oleh dokter hewan");
                         case SuntikAntiJamurKulit ->
-                            list.add(JenisPerawatan.SuntikAntiJamurKulit + " oleh doktor hewan");
+                            list.add(JenisPerawatan.SuntikAntiJamurKulit + " oleh dokter hewan");
                         case PemeriksaanRawatInap ->
-                            list.add(JenisPerawatan.PemeriksaanRawatInap + " oleh doktor hewan");
+                            list.add(JenisPerawatan.PemeriksaanRawatInap + " oleh dokter hewan");
                         case PemeriksaanRawatJalan ->
-                            list.add(JenisPerawatan.PemeriksaanRawatJalan + " oleh doktor hewan");
+                            list.add(JenisPerawatan.PemeriksaanRawatJalan + " oleh dokter hewan");
                         case Mandi ->
                             list.add(JenisPerawatan.Mandi + " oleh groomer");
                         case Cukur ->
@@ -140,17 +140,17 @@ class Admin extends Karyawan implements CetakInfo {
                 if (((Kelinci) hewan).jenisPerawatan.get(i) != null) {
                     switch (hewan.jenisPerawatan.get(i)) {
                         case SuntikVaksin ->
-                            list.add(JenisPerawatan.SuntikVaksin + " oleh doktor hewan");
+                            list.add(JenisPerawatan.SuntikVaksin + " oleh dokter hewan");
                         case SuntikAntiKutu ->
-                            list.add(JenisPerawatan.SuntikAntiKutu + " oleh doktor hewan");
+                            list.add(JenisPerawatan.SuntikAntiKutu + " oleh dokter hewan");
                         case SuntikScabies ->
-                            list.add(JenisPerawatan.SuntikScabies + " oleh doktor hewan");
+                            list.add(JenisPerawatan.SuntikScabies + " oleh dokter hewan");
                         case SuntikAntiJamurKulit ->
-                            list.add(JenisPerawatan.SuntikAntiJamurKulit + " oleh doktor hewan");
+                            list.add(JenisPerawatan.SuntikAntiJamurKulit + " oleh dokter hewan");
                         case PemeriksaanRawatInap ->
-                            list.add(JenisPerawatan.PemeriksaanRawatInap + " oleh doktor hewan");
+                            list.add(JenisPerawatan.PemeriksaanRawatInap + " oleh dokter hewan");
                         case PemeriksaanRawatJalan ->
-                            list.add(JenisPerawatan.PemeriksaanRawatJalan + " oleh doktor hewan");
+                            list.add(JenisPerawatan.PemeriksaanRawatJalan + " oleh dokter hewan");
                         case Mandi ->
                             list.add(JenisPerawatan.Mandi + " oleh groomer");
                         case Cukur ->
