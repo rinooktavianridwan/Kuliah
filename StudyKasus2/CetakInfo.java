@@ -4,10 +4,8 @@
  */
 package StudyKasus2;
 
-
 public interface CetakInfo {
-    
+
     public void print();
-        
-    
+
 }

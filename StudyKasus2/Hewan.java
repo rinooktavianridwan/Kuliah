@@ -45,20 +45,20 @@ public class Hewan implements CetakInfo {
         int j = 1;
         for (int i = 0; i < jenisPerawatan.size(); i++) {
             if (jenisPerawatan.get(i) != null) {
-                System.out.println(j + ". " + jenisPerawatan.get(i) +  "\t\t"+jenisPerawatan.get(i).harga);
+                System.out.println(j + ". " + jenisPerawatan.get(i) + "\t\t" + jenisPerawatan.get(i).harga);
                 j++;
             }
         }
         System.out.println("Riwayat penyakit\t\t: " + riwayatPenyakit);
         System.out.println("Tahun kelahiran hewan\t: " + tahunKelahiran);
-        System.out.println("Umur hewan\t\t\t\t: " + umurHewan);
+        System.out.println("Umur hewan\t\t\t\t: " + umurHewan + " bulan");
         System.out.println("Total harga\t\t\t\t: " + totalHarga);
 
     }
 
 }
 
-class Kucing extends Hewan implements CetakInfo{
+class Kucing extends Hewan implements CetakInfo {
 
     String kebiasaanMencakar;
 
@@ -76,7 +76,7 @@ class Kucing extends Hewan implements CetakInfo{
     }
 }
 
-class Anjing extends Hewan implements CetakInfo{
+class Anjing extends Hewan implements CetakInfo {
 
     String kebisaanMenggigit;
 
@@ -94,7 +94,7 @@ class Anjing extends Hewan implements CetakInfo{
     }
 }
 
-class Kelinci extends Hewan implements CetakInfo{
+class Kelinci extends Hewan implements CetakInfo {
 
     String kebiasaanMelompat;
 
@@ -111,5 +111,3 @@ class Kelinci extends Hewan implements CetakInfo{
         System.out.println("Kebiasaan melompat\t\t: " + kebiasaanMelompat);
     }
 }
-
-

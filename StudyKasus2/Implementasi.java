@@ -13,7 +13,7 @@ public class Implementasi {
         Scanner input = new Scanner(System.in);
         ArrayList<Karyawan> listKaryawan = new ArrayList<>();
         ArrayList<Hewan> listHewan = new ArrayList<>();
-        LinkedHashSet<String> riwayatPelayanan = new LinkedHashSet<>();
+        ArrayList<String> riwayatPelayanan = new ArrayList<>();
 
         System.out.println("===============================================");
         System.out.println("\t\tAPLIKASI PET-HOUSE");
@@ -116,6 +116,7 @@ public class Implementasi {
                 if (listHewan.isEmpty()) {
                     System.out.println("Tidak ada riwayat layanan");
                 } else {
+
                     for (int i = 0; i < listHewan.size(); i++) {
                         Admin admin = new Admin();
                         admin.riwayatPelayanan(riwayatPelayanan, listHewan.get(i));
@@ -245,8 +246,6 @@ public class Implementasi {
         String noTelp = input.nextLine();
         System.out.print("Masukkan jenis kelamin: ");
         String jenisKelamin = input.nextLine();
-        System.out.print("Masukkan posisi: ");
-        String posisi = input.nextLine();
         System.out.print("Masukkan bagian: ");
         String bagian = input.nextLine();
         System.out.print("Masukkan umur: ");
@@ -364,10 +363,10 @@ public class Implementasi {
             System.out.println("5. Pemeriksaan Rawat Inap\t(Rp.150.000)");
             System.out.println("6. Pemeriksaan Rawat Jalan\t(Rp.65.000)");
             System.out.println("7. Mandi\t\t\t\t(Rp. 40.000)");
-            System.out.println("8. Cukur\t\t\t\t(Rp. 35.000");
-            System.out.println("9. Trimming\t\t\t\t(Rp. 20.000");
+            System.out.println("8. Cukur\t\t\t\t(Rp. 35.000)");
+            System.out.println("9. Trimming\t\t\t\t(Rp. 20.000)");
             System.out.println("Pilihan boleh lebih dari satu (Pisahkan spasi)");
-            System.out.println("Contoh : 1 2 3 4 5 6");
+            System.out.println("Contoh : 1 2 3 4 5 6 7 8 9");
             System.out.print("Pilihan : ");
             String pilihan = input.nextLine().trim();
             String[] KumpulanPilihan = pilihan.split(" ");
@@ -446,13 +445,14 @@ public class Implementasi {
                     jumlahKebutuhan++;
 
                 } else if (masukan > 9 || masukan < 1) {
-                    System.out.println("Pilihan " + masukan + "tidak ada");
+                    System.out.println("Pilihan " + masukan + " tidak ada");
                 }
             }
 
-            System.out.print("Apakah ingin menambah perawatan (ya/tidak) :");
+            System.out.print("Apakah ingin menambah perawatan (ya/tidak) : ");
             String perintah = input.nextLine().trim();
             if (perintah.equalsIgnoreCase("tidak")) {
+                jumlahKebutuhan = 0;
                 if (nomorPerawatan.isEmpty()) {
                     System.out.println("Tidak ada perawatan yang dipesan");
                     return;
@@ -466,6 +466,7 @@ public class Implementasi {
                     System.out.print("Apakah ingin menambah perawatan (ya/tidak) : ");
                     String perintah2 = input.nextLine();
                     if (perintah2.equalsIgnoreCase("tidak")) {
+                        jumlahKebutuhan = 0;
                         if (nomorPerawatan.isEmpty()) {
                             System.out.println("Tidak ada perawatan yang dipesan");
                             return;
@@ -553,200 +554,10 @@ public class Implementasi {
             System.out.println("5. Pemeriksaan Rawat Inap\t(Rp. 150.000)");
             System.out.println("6. Pemeriksaan Rawat Jalan\t(Rp. 65.000)");
             System.out.println("7. Mandi\t\t\t\t(Rp. 40.000)");
-            System.out.println("8. Cukur\t\t\t\t(Rp. 35.000");
-            System.out.println("9. Trimming\t\t\t\t(Rp. 20.000");
+            System.out.println("8. Cukur\t\t\t\t(Rp. 35.000)");
+            System.out.println("9. Trimming\t\t\t\t(Rp. 20.000)");
             System.out.println("Pilihan boleh lebih dari satu (Pisahkan spasi)");
             System.out.println("Contoh : 1 2 3 4 5 6 7 8 9");
-            System.out.print("Pilihan : ");
-            String pilihan = input.nextLine().trim();
-            String[] KumpulanPilihan = pilihan.split(" ");
-            for (int i = 0; i < KumpulanPilihan.length; i++) {
-                // Handle input Number Format Exception
-                int masukan;
-                try {
-                    masukan = Integer.parseInt(KumpulanPilihan[i]);
-                } catch (NumberFormatException e) {
-                    System.out.println("Input pilihan " + KumpulanPilihan[i] + " tidak valid");
-                    break;
-                }
-                if (nomorPerawatan.contains(masukan)) {
-                    System.out.println("Anda sudah memilih jenis perawatan nomor " + masukan + " sebelumnya");
-                } else if (masukan == 1) {
-                    totalHarga += JenisPerawatan.SuntikVaksin.harga;
-                    kebutuhan.add(JenisPerawatan.SuntikVaksin);
-                    nomorPerawatan.add(masukan);
-                    System.out.println("Perawatan nomor 1 telah dipesan");
-                    jumlahKebutuhan++;
-
-                } else if (masukan == 2) {
-                    totalHarga += JenisPerawatan.SuntikAntiKutu.harga;
-                    kebutuhan.add(JenisPerawatan.SuntikAntiKutu);
-                    nomorPerawatan.add(masukan);
-                    System.out.println("Perawatan nomor 2 telah dipesan");
-                    jumlahKebutuhan++;
-
-                } else if (masukan == 3) {
-                    totalHarga += JenisPerawatan.SuntikScabies.harga;
-                    kebutuhan.add(JenisPerawatan.SuntikScabies);
-                    nomorPerawatan.add(masukan);
-                    System.out.println("Perawatan nomor 3 telah dipesan");
-                    jumlahKebutuhan++;
-
-                } else if (masukan == 4) {
-                    totalHarga += JenisPerawatan.SuntikAntiJamurKulit.harga;
-                    kebutuhan.add(JenisPerawatan.SuntikAntiJamurKulit);
-                    nomorPerawatan.add(masukan);
-                    System.out.println("Perawatan nomor 4 telah dipesan");
-                    jumlahKebutuhan++;
-
-                } else if (masukan == 5) {
-                    totalHarga += JenisPerawatan.PemeriksaanRawatInap.harga;
-                    kebutuhan.add(JenisPerawatan.PemeriksaanRawatInap);
-                    nomorPerawatan.add(masukan);
-                    System.out.println("Perawatan nomor 5 telah dipesan");
-                    jumlahKebutuhan++;
-
-                } else if (masukan == 6) {
-                    totalHarga += JenisPerawatan.PemeriksaanRawatJalan.harga;
-                    kebutuhan.add(JenisPerawatan.PemeriksaanRawatJalan);
-                    nomorPerawatan.add(masukan);
-                    System.out.println("Perawatan nomor 6 telah dipesan");
-                    jumlahKebutuhan++;
-
-                } else if (masukan == 7) {
-                    totalHarga += JenisPerawatan.Mandi.harga;
-                    kebutuhan.add(JenisPerawatan.Mandi);
-                    nomorPerawatan.add(masukan);
-                    System.out.println("Perawatan nomor 7 telah dipesan");
-                    jumlahKebutuhan++;
-
-                } else if (masukan == 8) {
-                    totalHarga += JenisPerawatan.Cukur.harga;
-                    kebutuhan.add(JenisPerawatan.Cukur);
-                    nomorPerawatan.add(masukan);
-                    System.out.println("Perawatan nomor 8 telah dipesan");
-                    jumlahKebutuhan++;
-
-                } else if (masukan == 9) {
-                    totalHarga += JenisPerawatan.Trimming.harga;
-                    kebutuhan.add(JenisPerawatan.Trimming);
-                    nomorPerawatan.add(masukan);
-                    System.out.println("Perawatan nomor 9 telah dipesan");
-                    jumlahKebutuhan++;
-
-                } else if (masukan > 9 || masukan < 1) {
-                    System.out.println("Pilihan " + masukan + "tidak ada");
-                }
-            }
-
-            System.out.print("Apakah ingin menambah perawatan (ya/tidak) :");
-            String perintah = input.nextLine().trim();
-            if (perintah.equalsIgnoreCase("tidak")) {
-                if (nomorPerawatan.isEmpty()) {
-                    System.out.println("Tidak ada perawatan yang dipesan");
-                    return;
-                } else {
-                    break;
-                }
-            } else if (!perintah.equalsIgnoreCase("tidak") && !perintah.equalsIgnoreCase("ya")) {
-                System.out.println("(Tolong masukkan iya atau tidak)");
-                boolean kondisi = true;
-                while (kondisi) {
-                    System.out.print("Apakah ingin menambah perawatan (ya/tidak) : ");
-                    String perintah2 = input.nextLine();
-                    if (perintah2.equalsIgnoreCase("tidak")) {
-                        if (nomorPerawatan.isEmpty()) {
-                            System.out.println("Tidak ada perawatan yang dipesan");
-                            return;
-                        } else {
-                            kondisi = false;
-                        }
-                    } else if (perintah2.equalsIgnoreCase("ya")) {
-                        break;
-                    }
-                }
-                if (kondisi == false) {
-                    break;
-                }
-            }
-        }
-        System.out.print("Masukkan riwayat penyakit: ");
-        String riwayatPenyakit = input.nextLine();
-        String kebiasaanMenggigit = null;
-        while (true) {
-            System.out.print("Masukkan kebiasaan menggigit (ya/tidak):");
-            kebiasaanMenggigit = input.nextLine();
-            if (kebiasaanMenggigit.equalsIgnoreCase("tidak")) {
-                break;
-            } else if (kebiasaanMenggigit.equalsIgnoreCase("ya")) {
-                break;
-            } else {
-                System.out.println("(Tolong masukkan iya atau tidak)");
-            }
-        }
-        System.out.print("Masukkan tahun kelahiran: ");
-        // Handle input mismatch exception
-        int tahunKelahiran;
-        try {
-            tahunKelahiran = input.nextInt();
-        } catch (InputMismatchException e) {
-            System.out.println("Input tahun kelahiran tidak valid. Silakan coba lagi.");
-            input.nextLine();
-            return;
-        }
-        System.out.print("Masukkan umur hewan (bulan) : ");
-        // Handle input mismatch exception
-        int umurHewan;
-        try {
-            umurHewan = input.nextInt();
-        } catch (InputMismatchException e) {
-            System.out.println("Input umur hewan tidak valid. Silakan coba lagi.");
-            input.nextLine();
-            return;
-        }
-
-        Anjing anjing = new Anjing(noPelanggan, namaPelanggan, namaHewan, jenisHewan, warnaHewan, kebutuhan, riwayatPenyakit, tahunKelahiran, umurHewan, totalHarga, kebiasaanMenggigit);
-        list.add(anjing);
-
-        if (input.hasNextLine()) {
-            input.nextLine();
-        }
-
-    }
-
-    static void inputHewanKelinci(ArrayList<Hewan> list) {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Masukkan ID pelanggan: ");
-        String noPelanggan = input.nextLine();
-        System.out.print("Masukkan nama pelanggan: ");
-        String namaPelanggan = input.nextLine();
-        System.out.print("Masukkan nama hewan: ");
-        String namaHewan = input.nextLine();
-        String jenisHewan = "Kelinci";
-        System.out.print("Masukkan warna hewan: ");
-        String warnaHewan = input.nextLine();
-        ArrayList<JenisPerawatan> kebutuhan = new ArrayList();
-        Set<Integer> nomorPerawatan = new LinkedHashSet<>();
-        int totalHarga = 0;
-        int jumlahKebutuhan = 0;
-        while (true) {
-            if (jumlahKebutuhan == 9) {
-                System.out.println("Anda telah memesan semua kebutuhan untuk perawatan hewan");
-                break;
-            }
-            System.out.println("Masukkan kebutuhan pelayanan : ");
-            System.out.println("Jenis Perawatan : ");
-            System.out.println("1. Suntik Vaksin\t\t\t (Rp.115.000)");
-            System.out.println("2. Suntik Anti Kutu\t\t\t (Rp.75.000)");
-            System.out.println("3. Suntik Scabies\t\t (Rp.70.000)");
-            System.out.println("4. Suntik Anti Jamur Kulit\t (Rp.70.000)");
-            System.out.println("5. Pemeriksaan Rawat Inap\t (Rp.150.000)");
-            System.out.println("6. Pemeriksaan Rawat Jalan\t (Rp.65.000)");
-            System.out.println("7. Mandi\t\t\t\t(Rp. 40.000)");
-            System.out.println("8. Cukur\t\t\t\t(Rp. 35.000");
-            System.out.println("9. Trimming\t\t\t\t(Rp. 20.000");
-            System.out.println("Pilihan boleh lebih dari satu (Pisahkan spasi)");
-            System.out.println("Contoh : 1 2 3 4 5 6");
             System.out.print("Pilihan : ");
             String pilihan = input.nextLine().trim();
             String[] KumpulanPilihan = pilihan.split(" ");
@@ -832,6 +643,7 @@ public class Implementasi {
             System.out.print("Apakah ingin menambah perawatan (ya/tidak) : ");
             String perintah = input.nextLine().trim();
             if (perintah.equalsIgnoreCase("tidak")) {
+                jumlahKebutuhan = 0;
                 if (nomorPerawatan.isEmpty()) {
                     System.out.println("Tidak ada perawatan yang dipesan");
                     return;
@@ -842,9 +654,202 @@ public class Implementasi {
                 System.out.println("(Tolong masukkan iya atau tidak)");
                 boolean kondisi = true;
                 while (kondisi) {
-                    System.out.print("Apakah ingin menambah perawatan (ya/tidak) :");
+                    System.out.print("Apakah ingin menambah perawatan (ya/tidak) : ");
                     String perintah2 = input.nextLine();
                     if (perintah2.equalsIgnoreCase("tidak")) {
+                        jumlahKebutuhan = 0;
+                        if (nomorPerawatan.isEmpty()) {
+                            System.out.println("Tidak ada perawatan yang dipesan");
+                            return;
+                        } else {
+                            kondisi = false;
+                        }
+                    } else if (perintah2.equalsIgnoreCase("ya")) {
+                        break;
+                    }
+                }
+                if (kondisi == false) {
+                    break;
+                }
+            }
+        }
+        System.out.print("Masukkan riwayat penyakit: ");
+        String riwayatPenyakit = input.nextLine();
+        String kebiasaanMenggigit = null;
+        while (true) {
+            System.out.print("Masukkan kebiasaan menggigit (ya/tidak): ");
+            kebiasaanMenggigit = input.nextLine();
+            if (kebiasaanMenggigit.equalsIgnoreCase("tidak")) {
+                break;
+            } else if (kebiasaanMenggigit.equalsIgnoreCase("ya")) {
+                break;
+            } else {
+                System.out.println("(Tolong masukkan iya atau tidak)");
+            }
+        }
+        System.out.print("Masukkan tahun kelahiran: ");
+        // Handle input mismatch exception
+        int tahunKelahiran;
+        try {
+            tahunKelahiran = input.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Input tahun kelahiran tidak valid. Silakan coba lagi.");
+            input.nextLine();
+            return;
+        }
+        System.out.print("Masukkan umur hewan (bulan) : ");
+        // Handle input mismatch exception
+        int umurHewan;
+        try {
+            umurHewan = input.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("Input umur hewan tidak valid. Silakan coba lagi.");
+            input.nextLine();
+            return;
+        }
+
+        Anjing anjing = new Anjing(noPelanggan, namaPelanggan, namaHewan, jenisHewan, warnaHewan, kebutuhan, riwayatPenyakit, tahunKelahiran, umurHewan, totalHarga, kebiasaanMenggigit);
+        list.add(anjing);
+
+        if (input.hasNextLine()) {
+            input.nextLine();
+        }
+
+    }
+
+    static void inputHewanKelinci(ArrayList<Hewan> list) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Masukkan ID pelanggan: ");
+        String noPelanggan = input.nextLine();
+        System.out.print("Masukkan nama pelanggan: ");
+        String namaPelanggan = input.nextLine();
+        System.out.print("Masukkan nama hewan: ");
+        String namaHewan = input.nextLine();
+        String jenisHewan = "Kelinci";
+        System.out.print("Masukkan warna hewan: ");
+        String warnaHewan = input.nextLine();
+        ArrayList<JenisPerawatan> kebutuhan = new ArrayList();
+        Set<Integer> nomorPerawatan = new LinkedHashSet<>();
+        int totalHarga = 0;
+        int jumlahKebutuhan = 0;
+        while (true) {
+            if (jumlahKebutuhan == 9) {
+                System.out.println("Anda telah memesan semua kebutuhan untuk perawatan hewan");
+                break;
+            }
+            System.out.println("Masukkan kebutuhan pelayanan : ");
+            System.out.println("Jenis Perawatan : ");
+            System.out.println("1. Suntik Vaksin\t\t\t (Rp.115.000)");
+            System.out.println("2. Suntik Anti Kutu\t\t\t (Rp.75.000)");
+            System.out.println("3. Suntik Scabies\t\t (Rp.70.000)");
+            System.out.println("4. Suntik Anti Jamur Kulit\t (Rp.70.000)");
+            System.out.println("5. Pemeriksaan Rawat Inap\t (Rp.150.000)");
+            System.out.println("6. Pemeriksaan Rawat Jalan\t (Rp.65.000)");
+            System.out.println("7. Mandi\t\t\t\t(Rp. 40.000)");
+            System.out.println("8. Cukur\t\t\t\t(Rp. 35.000)");
+            System.out.println("9. Trimming\t\t\t\t(Rp. 20.000)");
+            System.out.println("Pilihan boleh lebih dari satu (Pisahkan spasi)");
+            System.out.println("Contoh : 1 2 3 4 5 6 7 8 9");
+            System.out.print("Pilihan : ");
+            String pilihan = input.nextLine().trim();
+            String[] KumpulanPilihan = pilihan.split(" ");
+            for (int i = 0; i < KumpulanPilihan.length; i++) {
+                // Handle input Number Format Exception
+                int masukan;
+                try {
+                    masukan = Integer.parseInt(KumpulanPilihan[i]);
+                } catch (NumberFormatException e) {
+                    System.out.println("Input pilihan " + KumpulanPilihan[i] + " tidak valid");
+                    break;
+                }
+                if (nomorPerawatan.contains(masukan)) {
+                    System.out.println("Anda sudah memilih jenis perawatan nomor " + masukan + " sebelumnya");
+                } else if (masukan == 1) {
+                    totalHarga += JenisPerawatan.SuntikVaksin.harga;
+                    kebutuhan.add(JenisPerawatan.SuntikVaksin);
+                    nomorPerawatan.add(masukan);
+                    System.out.println("Perawatan nomor 1 telah dipesan");
+                    jumlahKebutuhan++;
+
+                } else if (masukan == 2) {
+                    totalHarga += JenisPerawatan.SuntikAntiKutu.harga;
+                    kebutuhan.add(JenisPerawatan.SuntikAntiKutu);
+                    nomorPerawatan.add(masukan);
+                    System.out.println("Perawatan nomor 2 telah dipesan");
+                    jumlahKebutuhan++;
+
+                } else if (masukan == 3) {
+                    totalHarga += JenisPerawatan.SuntikScabies.harga;
+                    kebutuhan.add(JenisPerawatan.SuntikScabies);
+                    nomorPerawatan.add(masukan);
+                    System.out.println("Perawatan nomor 3 telah dipesan");
+                    jumlahKebutuhan++;
+
+                } else if (masukan == 4) {
+                    totalHarga += JenisPerawatan.SuntikAntiJamurKulit.harga;
+                    kebutuhan.add(JenisPerawatan.SuntikAntiJamurKulit);
+                    nomorPerawatan.add(masukan);
+                    System.out.println("Perawatan nomor 4 telah dipesan");
+                    jumlahKebutuhan++;
+
+                } else if (masukan == 5) {
+                    totalHarga += JenisPerawatan.PemeriksaanRawatInap.harga;
+                    kebutuhan.add(JenisPerawatan.PemeriksaanRawatInap);
+                    nomorPerawatan.add(masukan);
+                    System.out.println("Perawatan nomor 5 telah dipesan");
+                    jumlahKebutuhan++;
+
+                } else if (masukan == 6) {
+                    totalHarga += JenisPerawatan.PemeriksaanRawatJalan.harga;
+                    kebutuhan.add(JenisPerawatan.PemeriksaanRawatJalan);
+                    nomorPerawatan.add(masukan);
+                    System.out.println("Perawatan nomor 6 telah dipesan");
+                    jumlahKebutuhan++;
+
+                } else if (masukan == 7) {
+                    totalHarga += JenisPerawatan.Mandi.harga;
+                    kebutuhan.add(JenisPerawatan.Mandi);
+                    nomorPerawatan.add(masukan);
+                    System.out.println("Perawatan nomor 7 telah dipesan");
+                    jumlahKebutuhan++;
+
+                } else if (masukan == 8) {
+                    totalHarga += JenisPerawatan.Cukur.harga;
+                    kebutuhan.add(JenisPerawatan.Cukur);
+                    nomorPerawatan.add(masukan);
+                    System.out.println("Perawatan nomor 8 telah dipesan");
+                    jumlahKebutuhan++;
+
+                } else if (masukan == 9) {
+                    totalHarga += JenisPerawatan.Trimming.harga;
+                    kebutuhan.add(JenisPerawatan.Trimming);
+                    nomorPerawatan.add(masukan);
+                    System.out.println("Perawatan nomor 9 telah dipesan");
+                    jumlahKebutuhan++;
+
+                } else if (masukan > 9 || masukan < 1) {
+                    System.out.println("Pilihan " + masukan + " tidak ada");
+                }
+            }
+
+            System.out.print("Apakah ingin menambah perawatan (ya/tidak) : ");
+            String perintah = input.nextLine().trim();
+            if (perintah.equalsIgnoreCase("tidak")) {
+                jumlahKebutuhan = 0;
+                if (nomorPerawatan.isEmpty()) {
+                    System.out.println("Tidak ada perawatan yang dipesan");
+                    return;
+                } else {
+                    break;
+                }
+            } else if (!perintah.equalsIgnoreCase("tidak") && !perintah.equalsIgnoreCase("ya")) {
+                System.out.println("(Tolong masukkan iya atau tidak)");
+                boolean kondisi = true;
+                while (kondisi) {
+                    System.out.print("Apakah ingin menambah perawatan (ya/tidak) : ");
+                    String perintah2 = input.nextLine();
+                    if (perintah2.equalsIgnoreCase("tidak")) {
+                        jumlahKebutuhan = 0;
                         if (nomorPerawatan.isEmpty()) {
                             System.out.println("Tidak ada perawatan yang dipesan");
                             return;
@@ -864,7 +869,7 @@ public class Implementasi {
         String riwayatPenyakit = input.nextLine();
         String kebiasaanMelompat = null;
         while (true) {
-            System.out.print("Masukkan kebiasaan melompat (ya/tidak):");
+            System.out.print("Masukkan kebiasaan melompat (ya/tidak): ");
             kebiasaanMelompat = input.nextLine();
             if (kebiasaanMelompat.equalsIgnoreCase("tidak")) {
                 break;

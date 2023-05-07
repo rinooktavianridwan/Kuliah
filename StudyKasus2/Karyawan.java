@@ -4,7 +4,7 @@
  */
 package StudyKasus2;
 
-import java.util.LinkedHashSet;
+import java.util.ArrayList;
 
 public class Karyawan implements CetakInfo {
 
@@ -56,7 +56,7 @@ public class Karyawan implements CetakInfo {
     }
 }
 
-class Admin extends Karyawan implements CetakInfo{
+class Admin extends Karyawan implements CetakInfo {
 
     public String divisi;
 
@@ -69,11 +69,11 @@ class Admin extends Karyawan implements CetakInfo{
         this.divisi = divisi;
     }
 
-    public void riwayatPelayanan(LinkedHashSet<String> list, Hewan hewan) {
+    public void riwayatPelayanan(ArrayList<String> list, Hewan hewan) {
 
         if (hewan instanceof Kucing) {
-            System.out.println("Kucing" + " \"" + hewan.namaHewan + "\" ");
-            System.out.println("Jenis Perawatan : ");
+            list.add("Kucing" + " \"" + hewan.namaHewan + "\" ");
+            list.add("Jenis Perawatan : ");
             for (int i = 0; i < hewan.jenisPerawatan.size(); i++) {
                 if (((Kucing) hewan).jenisPerawatan.get(i) != null) {
                     switch (hewan.jenisPerawatan.get(i)) {
@@ -100,13 +100,10 @@ class Admin extends Karyawan implements CetakInfo{
                         }
                     }
                 }
-
             }
-            System.out.println("");
-
         } else if (hewan instanceof Anjing) {
-            System.out.println("Anjing" + " \"" + hewan.namaHewan + "\" ");
-            System.out.println("Jenis Perawatan : ");
+            list.add("Anjing" + " \"" + hewan.namaHewan + "\" ");
+            list.add("Jenis Perawatan : ");
             for (int i = 0; i < hewan.jenisPerawatan.size(); i++) {
                 if (((Anjing) hewan).jenisPerawatan.get(i) != null) {
                     switch (hewan.jenisPerawatan.get(i)) {
@@ -133,12 +130,10 @@ class Admin extends Karyawan implements CetakInfo{
                         }
                     }
                 }
-
             }
-            System.out.println("");
         } else if (hewan instanceof Kelinci) {
-            System.out.println("Kelinci" + " \"" + hewan.namaHewan + "\" ");
-            System.out.println("Jenis Perawatan : ");
+            list.add("Kelinci" + " \"" + hewan.namaHewan + "\" ");
+            list.add("Jenis Perawatan : ");
             for (int i = 0; i < hewan.jenisPerawatan.size(); i++) {
                 if (((Kelinci) hewan).jenisPerawatan.get(i) != null) {
                     switch (hewan.jenisPerawatan.get(i)) {
@@ -165,15 +160,17 @@ class Admin extends Karyawan implements CetakInfo{
                         }
                     }
                 }
-
             }
-            System.out.println("");
         }
+    }
 
+    public void print() {
+        super.print();
+        System.out.println("Divisi\t\t\t: " + divisi);
     }
 }
 
-class Groomer extends Karyawan implements CetakInfo{
+class Groomer extends Karyawan implements CetakInfo {
 
     public String bagian;
 
@@ -196,7 +193,7 @@ class Groomer extends Karyawan implements CetakInfo{
     }
 }
 
-class DokterHewan extends Karyawan implements CetakInfo{
+class DokterHewan extends Karyawan implements CetakInfo {
 
     public String spesialis;
     private String tingkatPendidikan;
