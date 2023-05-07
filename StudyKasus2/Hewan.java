@@ -38,10 +38,10 @@ public class Hewan implements CetakInfo {
     public void print() {
         System.out.println("\nID Pelanggan\t\t\t: " + noPelanggan);
         System.out.println("Nama Pelanggan\t\t\t: " + namaPelanggan);
-        System.out.println("Nama Hewan\t\t\t\t: " + namaHewan);
-        System.out.println("Jenis Hewan\t\t\t\t: " + jenisHewan);
-        System.out.println("Warna Hewan\t\t\t\t: " + warnaHewan);
-        System.out.println("Kebutuhan \t\t\t\t: ");
+        System.out.println("Nama Hewan\t\t\t: " + namaHewan);
+        System.out.println("Jenis Hewan\t\t\t: " + jenisHewan);
+        System.out.println("Warna Hewan\t\t\t: " + warnaHewan);
+        System.out.println("Kebutuhan \t\t\t: ");
         int j = 1;
         for (int i = 0; i < jenisPerawatan.size(); i++) {
             if (jenisPerawatan.get(i) != null) {
@@ -49,10 +49,10 @@ public class Hewan implements CetakInfo {
                 j++;
             }
         }
-        System.out.println("Riwayat penyakit\t\t: " + riwayatPenyakit);
-        System.out.println("Tahun kelahiran hewan\t: " + tahunKelahiran);
-        System.out.println("Umur hewan\t\t\t\t: " + umurHewan + " bulan");
-        System.out.println("Total harga\t\t\t\t: " + totalHarga);
+        System.out.println("Riwayat penyakit\t\t\t: " + riwayatPenyakit);
+        System.out.println("Tahun kelahiran hewan\t\t: " + tahunKelahiran);
+        System.out.println("Umur hewan\t\t\t: " + umurHewan + " bulan");
+        System.out.println("Total harga\t\t\t: " + totalHarga);
 
     }
 

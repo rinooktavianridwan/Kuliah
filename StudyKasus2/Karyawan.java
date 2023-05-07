@@ -46,12 +46,12 @@ public class Karyawan implements CetakInfo {
     public void print() {
         System.out.println("\n" + posisi + " " + nama);
         System.out.println("Nama\t\t\t: " + nama);
-        System.out.println("ID\t\t\t\t: " + id);
+        System.out.println("ID\t\t\t: " + id);
         System.out.println("Alamat\t\t\t: " + alamat);
-        System.out.println("Nomer telfon\t: " + noTelp);
-        System.out.println("Jenis Kelamin\t: " + jenisKelamin);
+        System.out.println("Nomer telfon\t\t: " + noTelp);
+        System.out.println("Jenis Kelamin\t\t: " + jenisKelamin);
         System.out.println("Umur\t\t\t: " + umur);
-        System.out.println("Kategori\t\t: " + posisi);
+        System.out.println("Kategori\t\t\t: " + posisi);
         System.out.println("Gaji\t\t\t: " + gaji);
     }
 }
