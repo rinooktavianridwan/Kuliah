@@ -56,7 +56,7 @@ public class Karyawan implements CetakInfo {
     }
 }
 
-class Admin extends Karyawan {
+class Admin extends Karyawan implements CetakInfo{
 
     public String divisi;
 
@@ -173,7 +173,7 @@ class Admin extends Karyawan {
     }
 }
 
-class Groomer extends Karyawan {
+class Groomer extends Karyawan implements CetakInfo{
 
     public String bagian;
 
@@ -196,7 +196,7 @@ class Groomer extends Karyawan {
     }
 }
 
-class DokterHewan extends Karyawan {
+class DokterHewan extends Karyawan implements CetakInfo{
 
     public String spesialis;
     private String tingkatPendidikan;

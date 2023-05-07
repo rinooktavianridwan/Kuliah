@@ -58,7 +58,7 @@ public class Hewan implements CetakInfo {
 
 }
 
-class Kucing extends Hewan {
+class Kucing extends Hewan implements CetakInfo{
 
     String kebiasaanMencakar;
 
@@ -76,7 +76,7 @@ class Kucing extends Hewan {
     }
 }
 
-class Anjing extends Hewan {
+class Anjing extends Hewan implements CetakInfo{
 
     String kebisaanMenggigit;
 
@@ -94,7 +94,7 @@ class Anjing extends Hewan {
     }
 }
 
-class Kelinci extends Hewan {
+class Kelinci extends Hewan implements CetakInfo{
 
     String kebiasaanMelompat;
 
