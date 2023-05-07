@@ -101,6 +101,7 @@ class Admin extends Karyawan implements CetakInfo {
                     }
                 }
             }
+            list.add("");
         } else if (hewan instanceof Anjing) {
             list.add("Anjing" + " \"" + hewan.namaHewan + "\" ");
             list.add("Jenis Perawatan : ");
@@ -131,6 +132,7 @@ class Admin extends Karyawan implements CetakInfo {
                     }
                 }
             }
+            list.add("");
         } else if (hewan instanceof Kelinci) {
             list.add("Kelinci" + " \"" + hewan.namaHewan + "\" ");
             list.add("Jenis Perawatan : ");
@@ -161,6 +163,7 @@ class Admin extends Karyawan implements CetakInfo {
                     }
                 }
             }
+            list.add("");
         }
     }
 

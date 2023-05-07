@@ -116,7 +116,6 @@ public class Implementasi {
                 if (listHewan.isEmpty()) {
                     System.out.println("Tidak ada riwayat layanan");
                 } else {
-
                     for (int i = 0; i < listHewan.size(); i++) {
                         Admin admin = new Admin();
                         admin.riwayatPelayanan(riwayatPelayanan, listHewan.get(i));
@@ -124,6 +123,7 @@ public class Implementasi {
                     for (String s : riwayatPelayanan) {
                         System.out.println(s);
                     }
+                    riwayatPelayanan.clear();
                 }
 
             } else {
