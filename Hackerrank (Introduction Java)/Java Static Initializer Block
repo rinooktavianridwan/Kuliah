@@ -1,0 +1,31 @@
+
+import java.io.*;
+import java.util.*;
+
+public class JavaStaticInitializerBlock {
+
+    private static final byte x;
+    private static final byte y;
+
+    static {
+        Scanner scanner = new Scanner(System.in);
+        x = scanner.nextByte();
+        y = scanner.nextByte();
+        scanner.close();
+
+        if (!isPositive(x) || !isPositive(y)) {
+            System.out.println("java.lang.Exception: Breadth and height must be positive");
+        } else {
+            System.out.println(x * y);
+
+        }
+    }
+
+    public static void main(String[] args) {
+
+    }
+
+    public static boolean isPositive(byte z) {
+        return z > 0;
+    }
+}
