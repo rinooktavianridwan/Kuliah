@@ -1,0 +1,25 @@
+
+import java.util.*;
+
+public class JavaStringsIntroduction {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner scanner = new Scanner(System.in);
+        String kata1 = scanner.nextLine();
+        String kata2 = scanner.nextLine();
+        int jumlah1 = kata1.length();
+        int jumlah2 = kata2.length();
+        boolean alfabet = kata1.compareTo(kata2) > 0;
+        String gabungan = kata1.substring(0, 1).toUpperCase() + kata1.substring(1) + " " + kata2.substring(0, 1).toUpperCase() + kata2.substring(1);
+
+        System.out.println(jumlah1 + jumlah2);
+        if (alfabet) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+        System.out.println(gabungan);
+
+    }
+}
