@@ -1,0 +1,66 @@
+
+import java.util.*;
+
+public class JavaDatatypes {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        in.nextLine();
+        for (int i = 0; i < n; i++) {
+            String x = in.nextLine().trim();
+            if (isLong(x)) {
+                System.out.println(x+" can be fitted in:");
+                if (isByte(x)) {
+                    System.out.println("* byte");
+                }
+                if (isShort(x)) {
+                    System.out.println("* short");
+                }
+                if (isInteger(x)) {
+                    System.out.println("* int");
+                }
+                System.out.println("* long");
+            } else {
+                System.out.println(x + " can't be fitted anywhere.");
+            }
+        }
+    }
+
+    public static boolean isByte(String test) {
+        try {
+            Byte.parseByte(test);
+            return true;
+        } catch (NumberFormatException gagal) {
+            return false;
+        }
+    }
+
+    public static boolean isShort(String test) {
+        try {
+            Short.parseShort(test);
+            return true;
+        } catch (NumberFormatException gagal) {
+            return false;
+        }
+    }
+
+    public static boolean isLong(String test) {
+        try {
+            Long.parseLong(test);
+            return true;
+        } catch (NumberFormatException gagal) {
+            return false;
+        }
+    }
+
+    public static boolean isInteger(String test) {
+        try {
+            Integer.parseInt(test);
+            return true;
+        } catch (NumberFormatException gagal) {
+            return false;
+        }
+    }
+}
