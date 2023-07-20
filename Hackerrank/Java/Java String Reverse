@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.*;
+
+public class JavaStringReverse {
+
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+        String A=sc.next().toLowerCase();
+        char [] C = A.toCharArray();
+        /* Enter your code here. Print output to STDOUT. */
+        String B="";
+        for(int i = A.length(); i>0; i--){
+            B+=C[i-1];
+        }
+        if(A.equals(B)){
+            System.out.println("Yes");
+        } else{
+            System.out.println("No");
+        }
+        
+    }
+}
+
+
+
