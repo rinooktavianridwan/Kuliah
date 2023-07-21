@@ -1,0 +1,21 @@
+import java.io.*;
+import java.util.*;
+
+public class JavaStringTokens {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String s = scan.nextLine();
+        // Write your code here.
+        scan.close();
+        String hurufOnly = s.replaceAll("[^a-zA-Z\\s+]", " ");
+        StringTokenizer kata = new StringTokenizer (hurufOnly);
+        System.out.println(kata.countTokens());
+        while(kata.hasMoreTokens()){
+            String pointer = kata.nextToken();
+            System.out.println(pointer);
+        }
+        
+    }
+}
+
